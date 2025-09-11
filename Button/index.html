@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="js.js" defer></script>
 </head>
 
 <body>
@@ -16,19 +17,4 @@
       <a href="jewellery.html">Jewellery Accessories</a>
     </div>
   </div>
-
-  <script>
-    const dropdown = document.getElementById('dropdown');
-    const button = dropdown.querySelector('.dropbtn');
-
-    button.addEventListener('click', () => {
-      dropdown.classList.toggle('show');
-    });
-
-    window.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('show');
-      }
-    });
-  </script>
 </html>

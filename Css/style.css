@@ -1,55 +1,65 @@
 .footer {
   width: 100%;
-  float: left;
   background-color: #252525;
   padding: 60px 0;
+  font-family: sans-serif;
 }
 
 .footer-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .footer-brand {
   text-align: center;
   color: white;
-  font-size: 36px;
-  font-weight: bold;
-  padding-bottom: 20px;
-  font-family: 'Arial', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .newsletter {
-  width: 60%;
-  margin: 0 auto;
-  text-align: center;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
   display: flex;
-  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 5px;
+  position: relative;
 }
 
 .newsletter-input {
-  width: 100%;
+  flex: 1;
   font-size: 18px;
   color: #fff;
   background-color: transparent;
-  padding: 5px 0;
-  height: 60px;
   border: none;
+  outline: none;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
 }
 
-input.newsletter-input::placeholder {
+.newsletter-input::placeholder {
   color: #fff;
 }
 
 .subscribe-button {
-  width: 30%;
-  font-size: 16px;
+  font-size: 17px;
   color: #f26522;
+  font-weight:700;
   background-color: transparent;
-  padding: 20px 0 5px;
+  border: none;
+  padding-left: 15px;
   text-transform: uppercase;
-  text-align: right;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins';
 }
 
 .subscribe-button a {
@@ -63,28 +73,29 @@ input.newsletter-input::placeholder {
 
 .footer-links {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .footer-links ul {
-  padding: 0;
-  margin: 0;
   list-style: none;
-  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-links li {
-  float: left;
+  margin: 20px 25px 0;
   font-size: 16px;
-  padding: 20px 10px 0;
 }
 
-.footer-links li a {
+.footer-links a {
   color: #f1f1f1;
   text-decoration: none;
 }
 
-.footer-links li a:hover {
+.footer-links a:hover {
   color: #f26522;
 }
 
@@ -92,7 +103,7 @@ input.newsletter-input::placeholder {
   text-align: center;
   font-size: 16px;
   color: #ffffff;
-  padding: 30px;
+  margin-top: 40px;
 }
 
 .contact-info a {
@@ -103,10 +114,11 @@ input.newsletter-input::placeholder {
 .contact-info a:hover {
   color: #f26522;
 }
+
 .footer-credit {
   text-align: center;
   color: #aaa;
   font-size: 14px;
-  padding: 20px 0;
-  font-family: 'Arial', sans-serif;
+  padding: 40px 0 0;
+  margin-top: 50px;
 }

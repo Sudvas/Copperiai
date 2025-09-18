@@ -1,4 +1,5 @@
 .mainBody {
+  color: black;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -10,6 +11,7 @@
 }
 h1 {
   text-align: center;
+  margin-top: 80px;
   margin-bottom: 20px;
 }
 
@@ -79,7 +81,7 @@ h1 {
   cursor: pointer;
 }
  
-.buy-now {
+.buy-now1 {
   color: orangered;
 }
  
@@ -112,4 +114,4 @@ h1 {
 .carousel-buttons button:hover {
   background: orange;
 }
-/*need to change */
+/*need to change */ 

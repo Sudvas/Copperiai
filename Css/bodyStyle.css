@@ -1,4 +1,4 @@
-body {
+.mainBody {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -97,3 +97,4 @@ body {
 .carousel-buttons button:hover {
   background: #eee;
 }
+/*faggot time here */

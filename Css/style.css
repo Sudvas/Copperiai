@@ -27,7 +27,12 @@ body {
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
   background: transparent;
-  
+}
+.hero-title {
+  font-size: 42px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
 /* === NAVIGATION === */
@@ -46,40 +51,26 @@ body {
 }
 .top-nav a:hover { color: #fff; }
 
-.header-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  flex-wrap: wrap;
-}
-
 /* === HAMBURGER MENU === */
 .hamburger {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 10002;
   cursor: pointer;
+  width: 35px;
+  height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  padding: 8px;
-  border-radius: 50px;
-  z-index: 10002;
-  position: relative;
 }
 .hamburger span {
   display: block;
-  height: 6px;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
 }
-.hamburger span:not(:last-child) { margin-bottom: 6px; }
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* === FULLSCREEN MENU === */
 .menu {
@@ -132,13 +123,54 @@ body.menu-active .right-controls {
   pointer-events: none;
 }
 
-/* === SEARCH === */
+.bottom-subtitle {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+  text-align: center;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+/* === SEARCH & HEADER === */
+.header-controls {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+/* LOGO (Eflyer) */
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #fff;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.right-controls {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .centered-controls {
-  flex: 1;
+  flex: none;
   display: flex;
   justify-content: center;
   padding: 10px 20px;
 }
+
 .search-area {
   display: flex;
   align-items: stretch;
@@ -148,6 +180,7 @@ body.menu-active .right-controls {
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
 .category-dropdown {
   background: #252525;
   color: #fff;
@@ -156,11 +189,10 @@ body.menu-active .right-controls {
   border: none;
   border-radius: 6px 0 0 6px;
   appearance: none;
-background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 12px;
   cursor: pointer;
+  margin-right: 3px;
 }
+
 .search-input {
   flex: 1;
   padding: 12px 16px;
@@ -170,6 +202,7 @@ background-repeat: no-repeat;
   background: #fff;
   color: #333;
 }
+
 .search-btn {
   background: #f26522;
   color: #fff;
@@ -186,21 +219,18 @@ background-repeat: no-repeat;
 }
 .search-btn:hover { background: #e2541c; }
 
-/* === RIGHT CONTROLS === */
-.right-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
 .lang-dropdown {
   background: #fff;
   color: #333;
-  padding: 12px 18px;
+  padding: 12px 16px;
   font-size: 14px;
+  font-family: 'Poppins', sans-serif;
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  outline: none;
 }
+
 .icon-link {
   color: #fff;
   text-decoration: none;
@@ -232,8 +262,6 @@ background-repeat: no-repeat;
   color: #f26522;
   margin-top: 10px;
 }
-
-/* === BUTTONS === */
 .buy-now {
   background: #252525;
   color: #fff;
@@ -244,29 +272,61 @@ background-repeat: no-repeat;
   text-transform: uppercase;
   border: none;
   transition: background 0.3s ease;
-  margin: 40px 0 50px;
+  margin: 40px 0 20px;
 }
 .buy-now:hover { background: #f26522; }
 
-/* === ARROWS === */
+/* === SIDE ARROWS === */
+.side-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
 .side-arrows .arrow {
   position: absolute;
   top: 50%;
-  background: #fbeac9;
-  color: #000;
-  font-size: 24px;
+  transform: translateY(-50%);
   width: 50px;
   height: 50px;
+  font-size: 24px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: #fbeac9;
+  color: #000;
 }
-.arrow.left { left: 15%; transform: translate(-50%, -50%); }
-.arrow.right { right: 15%; transform: translate(50%, -50%); }
-.arrow:hover { background: #f26522; color: #fff; }
+
+.side-arrows .arrow.left { left: 5%; }
+.side-arrows .arrow.right { right: 5%; }
+
+.side-arrows .arrow:hover {
+  background: #f26522;
+  color: #fff;
+}
+.hero,
+.header-controls,
+.banner-content {
+  overflow: visible;
+}
+.btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background: #f26522;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 
 /* === FOOTER === */
 .footer {

@@ -2,7 +2,6 @@ const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const menuClose = document.getElementById('menuClose');
 
-// Hamburger toggle
 hamburger.addEventListener('click', () => {
   menu.classList.toggle('active');
   const isActive = menu.classList.contains('active');
@@ -14,7 +13,7 @@ menuClose.addEventListener('click', () => {
   menu.setAttribute('aria-hidden', 'true');
 });
 
-// Arrow functionality
+
 const leftArrow = document.getElementById('arrowLeft');
 const rightArrow = document.getElementById('arrowRight');
 const hero = document.querySelector('.hero');
@@ -38,4 +37,47 @@ leftArrow.addEventListener('click', () => {
 rightArrow.addEventListener('click', () => {
   bannerIndex = (bannerIndex + 1) % banners.length;
   updateBanner();
+});
+
+const loginBtn = document.getElementById("loginBtn");
+const loginModal = document.getElementById("loginModal");
+const closeModal = document.getElementById("closeModal");
+const submitLogin = document.getElementById("submitLogin");
+const loginError = document.getElementById("loginError");
+
+
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginModal.style.display = "block";
+});
+
+
+closeModal.addEventListener("click", () => {
+  loginModal.style.display = "none";
+  loginError.textContent = "";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === loginModal) {
+    loginModal.style.display = "none";
+    loginError.textContent = "";
+  }
+});
+
+submitLogin.addEventListener("click", () => {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!username || !password) {
+    loginError.textContent = "⚠️ Please fill in both fields.";
+    return;
+  }
+
+  loginError.style.color = "limegreen";
+  loginError.textContent = "✅ Login successful!";
+  setTimeout(() => {
+    loginModal.style.display = "none";
+    loginError.textContent = "";
+    loginError.style.color = "red";
+  }, 1500);
 });

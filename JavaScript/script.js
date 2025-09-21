@@ -5,7 +5,7 @@ const nextButton = document.getElementById('next');
 let index = 0;
  
 function updateCarousel() {
-  const cardWidth = cards[0].getBoundingClientRect().width + 40; // account for padding/margin
+  const cardWidth = cards[0].getBoundingClientRect().width + 40;
   track.style.transform = `translateX(-${index * cardWidth}px)`;
 }
  

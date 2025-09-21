@@ -11,8 +11,9 @@
   <script src="JavaScript/script.js" defer></script>
 </head>
 <body>
-  <div class="hero">
+ <div class="hero">
 
+    <!-- Top nav -->
     <div class="top-nav">
       <a href="#">Best Sellers</a>
       <a href="#">Gift Ideas</a>
@@ -21,48 +22,54 @@
       <a href="#">Customer Service</a>
     </div>
 
-    <header class="banner-content">
-      <div class="header-controls">
-        <!-- Hamburger button -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+    <!-- Header controls -->
+    <div class="header-controls">
 
-        <!-- Fullscreen menu overlay -->
-        <nav class="menu" id="menu" aria-hidden="true">
-          <!-- Close/back button inside menu -->
-          <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
-        </nav>
-
-        <div class="centered-controls">
-          <div class="search-area">
-            <select class="category-dropdown">
-              <option>All Category</option>
-              <option>Electronics</option>
-              <option>Clothing</option>
-              <option>Accessories</option>
-            </select>
-            <input type="text" placeholder="Search" class="search-input" />
-            <button class="search-btn">&#128269;</button>
-          </div>
-        </div>
-
-        <div class="right-controls">
-          <select class="lang-dropdown">
-            <option>English</option>
-            <option>Deutsch</option>
-            <option>Français</option>
-          </select>
-          <a href="#" class="icon-link">🛒 Cart</a>
-          <a href="#" class="icon-link" id="loginBtn">👤 Login</a>
-        </div>
+      <!-- Hamburger button -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
+
+      <!-- Logo -->
+      <div class="logo">Eflyer</div>
+
+      <!-- Search -->
+      <div class="search-area">
+        <select class="category-dropdown">
+          <option>All Category</option>
+          <option>Electronics</option>
+          <option>Clothing</option>
+          <option>Accessories</option>
+        </select>
+        <input type="text" placeholder="Search" class="search-input" />
+        <button class="search-btn">&#128269;</button>
+      </div>
+
+      <!-- Right controls -->
+      <div class="right-controls">
+        <select class="lang-dropdown">
+          <option>English</option>
+          <option>Deutsch</option>
+          <option>Français</option>
+        </select>
+        <a href="#" class="icon-link">🛒 CART</a>
+        <a href="#" class="icon-link" id="loginBtn">👤 LOGIN</a>
+      </div>
+    </div>
+
+    <!-- Banner content -->
+    <header class="banner-content">
+
+      <!-- Fullscreen menu -->
+      <nav class="menu" id="menu" aria-hidden="true">
+        <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
 
       <div class="banner-text">
         <h1>
@@ -70,33 +77,24 @@
           <span>YOUR FAVORIOT SHOPING</span>
         </h1>
         <button class="buy-now">Buy Now</button>
+        <h2 class="bottom-subtitle">Man and Woman Fashion</h2>
       </div>
 
+      <!-- Side Arrows -->
       <div class="side-arrows">
-        <div class="arrow left">&#10094;</div>
-        <div class="arrow right">&#10095;</div>
+        <div class="arrow left" id="arrowLeft">&#10094;</div>
+        <div class="arrow right" id="arrowRight">&#10095;</div>
       </div>
     </header>
 
   </div>
-  
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Login</h2>
-      <form id="loginForm">
-        <input type="email" id="email" placeholder="Email" required />
-        <input type="password" id="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-        <p id="errorMsg" class="error"></p>
-      </form>
-    </div>
-  </div>
+</body>
+</html>
+
 
     <!--Body start-->
 <div class="mainBody">
 <!--fashion section start-->
-  <h1>Man and woman fashion</h1>
   <div class="carousel-container">
     <div class="carousel-track">
       <!-- Card 1 -->

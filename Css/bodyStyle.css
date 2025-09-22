@@ -114,4 +114,55 @@ h1 {
 .carousel-buttons button:hover {
   background: orange;
 }
-/*need to change */ 
+
+.cart-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 280px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 16px;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.cart-dropdown.hidden {
+  display: none;
+}
+
+.cart-dropdown h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+#cart-items li button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#cart-items li button:hover {
+  background: darkred;
+}

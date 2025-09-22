@@ -21,7 +21,7 @@
       <a href="#">Today's Deals</a>
       <a href="#">Customer Service</a>
     </div>
-
+  
     <!-- Header controls -->
     <div class="header-controls">
 
@@ -35,7 +35,7 @@
       <!-- Logo -->
      <!-- Top brand -->
 <div class="top-brand">
-  Eflyer
+Eflyer
 </div>
 
 
@@ -58,7 +58,12 @@
           <option>Deutsch</option>
           <option>Français</option>
         </select>
-        <a href="#" class="icon-link">🛒 CART</a>
+        <a href="#" class="icon-link" id="cart-toggle">🛒 Cart (<span id="cart-count">0</span>)</a>
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p id="empty-cart">Cart is empty.</p>
+        </div>
         <a href="#" class="icon-link" id="loginBtn">👤 LOGIN</a>
       </div>
     </div>
@@ -82,8 +87,6 @@
         </h1>
         <button class="buy-now">Buy Now</button>
         </div>
-<h2 class="bottom-subtitle">Man & Woman Fashion</h2>
-
       </div>
 
       <!-- Side Arrows -->
@@ -112,6 +115,7 @@
 
     <!--Body start-->
 <div class="mainBody">
+  <h2 class="bottom-subtitle">Man & Woman Fashion</h2>
 <!--fashion section start-->
   <div class="carousel-container">
     <div class="carousel-track">

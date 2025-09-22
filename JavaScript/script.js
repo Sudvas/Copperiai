@@ -75,3 +75,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector(".search-input");
+  const searchResults = document.querySelector(".search-results");
+  const cards = document.querySelectorAll(".card");
+
+  function searchItems() {
+    const query = searchInput.value.toLowerCase();
+    searchResults.innerHTML = "";
+
+    if (!query) {
+      searchResults.classList.add("hidden");
+      return;
+    }
+
+    let found = 0;
+    cards.forEach(card => {
+      const title = card.querySelector("h3").textContent;
+      const price = card.querySelector(".price")?.textContent || "";
+      if (title.toLowerCase().includes(query)) {
+        const resultItem = document.createElement("div");
+        resultItem.textContent = `${title} - ${price}`;
+        
+        // scroll to prodc
+        resultItem.addEventListener("click", () => {
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          searchResults.classList.add("hidden");
+        });
+
+        searchResults.appendChild(resultItem);
+        found++;
+      }
+    });
+
+    if (found > 0) {
+      searchResults.classList.remove("hidden");
+    } else {
+      searchResults.classList.add("hidden");
+    }
+  }
+
+  searchInput.addEventListener("input", searchItems);
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-area")) {
+      searchResults.classList.add("hidden");
+    }
+  });
+});
+

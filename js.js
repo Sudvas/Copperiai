@@ -2,16 +2,26 @@ const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const menuClose = document.getElementById('menuClose');
 
+const sideArrows = document.querySelector('.side-arrows');
+
 hamburger.addEventListener('click', () => {
   menu.classList.toggle('active');
   const isActive = menu.classList.contains('active');
   menu.setAttribute('aria-hidden', !isActive);
+  if (isActive) {
+    sideArrows.style.display = 'none';
+  } else {
+    sideArrows.style.display = '';
+  }
 });
 
 menuClose.addEventListener('click', () => {
   menu.classList.remove('active');
   menu.setAttribute('aria-hidden', 'true');
+
+  sideArrows.style.display = '';
 });
+
 
 
 const leftArrow = document.getElementById('arrowLeft');
@@ -81,3 +91,4 @@ submitLogin.addEventListener("click", () => {
     loginError.style.color = "red";
   }, 1500);
 });
+

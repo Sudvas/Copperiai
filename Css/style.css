@@ -12,7 +12,6 @@ body {
   position: relative;
 }
 
-/* === HERO === */
 .hero {
   position: relative;
   background: url('../images/girl.png') center/cover no-repeat;
@@ -55,7 +54,7 @@ body {
 .hamburger {
   position: absolute;
   top: 50%;
-  left: 20px;
+  left: 180px;
   transform: translateY(-50%);
   z-index: 10002;
   cursor: pointer;
@@ -124,13 +123,11 @@ body.menu-active .right-controls {
 }
 
 .bottom-subtitle {
-  font-size: 26px;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  color: #000;
-  text-align: center;
-  margin-top: 40px;
-  text-transform: uppercase;
+font-size: 40px;
+line-height: 32px;
+color: #30302e;
+font-weight: 700;
+font-family: "Poppins";
 }
 
 /* === SEARCH & HEADER === */
@@ -171,28 +168,44 @@ body.menu-active .right-controls {
   padding: 10px 20px;
 }
 
+/* SEARCH AREA WRAPPER */
 .search-area {
   display: flex;
-  align-items: stretch;
-  max-width: 600px;
+  align-items: center;
+  gap: 10px;
   width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  max-width: 770px;
 }
 
+.search-group {
+  flex: 1; 
+}
+
+
+/* CATEGORY DROPDOWN*/
 .category-dropdown {
   background: #252525;
   color: #fff;
   padding: 12px 18px;
   font-size: 14px;
   border: none;
-  border-radius: 6px 0 0 6px;
-  appearance: none;
+  border-radius: 6px;
   cursor: pointer;
-  margin-right: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
+/* SEARCH GROUP */
+.search-group {
+  display: flex;
+  flex: 1;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* SEARCH INPUT */
 .search-input {
   flex: 1;
   padding: 12px 16px;
@@ -200,36 +213,78 @@ body.menu-active .right-controls {
   border: none;
   outline: none;
   background: #fff;
-  color: #333;
+  box-shadow: none;
 }
 
+/* SEARCH BUTTON */
 .search-btn {
-  background: #f26522;
-  color: #fff;
-  padding: 0 20px;
-  font-size: 18px;
+  background: #f26522 url("../images/search-icon.png") center no-repeat;
+  background-size: 16px 16px;
+  width: 45px;
+  height: 45px;
   border: none;
-  cursor: pointer;
   border-radius: 0 6px 6px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 55px;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
-.search-btn:hover { background: #e2541c; }
+.search-btn:hover {
+  background-color: #e2541c;
+}
+
+
 
 .lang-dropdown {
-  background: #fff;
-  color: #333;
-  padding: 12px 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: #fff url("../images/flag-uk.png") no-repeat 8px center;
+  background-size: 20px 14px;
+  padding: 8px 35px 8px 35px; /* space left for flag + right for arrow */
+  border-radius: 6px;
+  border: 1px solid #ddd;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
-  border-radius: 6px;
-  border: none;
   cursor: pointer;
-  outline: none;
+  color: #333;
+
+  /* custom ▼ arrow */
+  background-image: 
+    url("../images/flag-uk.png"),
+    url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: 8px center, right 10px center;
+  background-size: 20px 14px, 12px 12px;
 }
+
+
+.lang-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-dropdown-wrapper::after {
+  content: "▼";
+  font-size: 10px;
+  color: #666;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+
+.lang-dropdown::after {
+  content: "▼";
+  font-size: 10px;
+  color: #666;
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+}
+
 
 .icon-link {
   color: #fff;
@@ -259,15 +314,14 @@ body.menu-active .right-controls {
 }
 .banner-text h1 span { display: block; }
 .banner-text h1 span:last-child {
-  color: #f26522;
   margin-top: 10px;
 }
 .buy-now {
   background: #252525;
   color: #fff;
-  padding: 15px 40px;
-  font-size: 16px;
-  border-radius: 6px;
+width: 214px;
+height: 74px;
+border-radius: 6px;
   cursor: pointer;
   text-transform: uppercase;
   border: none;
@@ -545,13 +599,16 @@ html, body {
 .category-dropdown {
   background: #252525;
   color: #fff;
-  padding: 12px 18px;
-  font-size: 14px;
+width: 170px;
+height: 43px;
+border-radius: 4px;
+background-color: #30302e;
   border: none;
-  border-radius: 0;
+  border-radius: 6px;
+  margin-right: 10px;
   cursor: pointer;
-  margin-right: 0;
 }
+
 
 .bottom-subtitle {
   font-size: 28px;
@@ -561,4 +618,170 @@ html, body {
   text-align: center;
   margin: 40px 0;
   text-transform: uppercase;
+}
+.carousel-container {
+  overflow: hidden;
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  flex: 0 0 250px;
+  margin: 0 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-buttons button {
+  background: #f26522;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.carousel-buttons button:hover {
+  background: #e2541c;
+}
+
+.brand-logo {
+  text-align: center;
+  padding: 11px 0;
+}
+
+.brand-logo h1 {
+  font-size: 100px
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+
+}
+
+.category-dropdown {
+  background: #252525;
+  color: #fff;
+  padding: 12px 40px 12px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 12px;
+}
+/* burger fix */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.menu.active {
+  left: 0;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  margin: 12px 0;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: #f26522;
+}
+
+.menu-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu.active ~ .side-arrows {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: #111;
+  color: #fff;
+  padding: 60px 20px 20px;
+  box-sizing: border-box;
+  transition: left 0.28s ease;
+  z-index: 3000;
+}
+
+.menu.active {
+  left: 0;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 2500;
+  display: none;
+}
+.menu-overlay.active { display: block; }
+
+body.menu-active .side-arrows,
+body.menu-active .centered-controls,
+body.menu-active .right-controls {
+  display: none !important;
+}
+
+.menu-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }

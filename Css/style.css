@@ -279,7 +279,7 @@ body.menu-active .right-controls {
 /* === SIDE ARROWS === */
 .side-arrows {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 0;
   right: 0;
   width: 100%;
@@ -562,4 +562,3 @@ html, body {
   margin: 40px 0;
   text-transform: uppercase;
 }
-a

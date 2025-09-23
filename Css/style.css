@@ -124,10 +124,11 @@ body.menu-active .right-controls {
 
 .bottom-subtitle {
 font-size: 40px;
-line-height: 32px;
-color: #30302e;
+line-height: 321px;
+color: #383838;
 font-weight: 700;
-font-family: "Poppins";
+font-family: 'Poppins', sans-serif;
+
 }
 
 /* === SEARCH & HEADER === */

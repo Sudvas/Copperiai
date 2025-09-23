@@ -1,3 +1,4 @@
+// Card carousel
 const track = document.querySelector('.carousel-track');
 const cards = document.querySelectorAll('.card');
 const prevButton = document.getElementById('prev');
@@ -19,6 +20,7 @@ nextButton.addEventListener('click', () => {
   updateCarousel();
 });
 
+// Cart
 document.addEventListener("DOMContentLoaded", () => {
   const buyButtons = document.querySelectorAll(".buy-now1");
   const cartToggle = document.getElementById("cart-toggle");
@@ -76,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+//Search bar (reikes dar fix)
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector(".search-input");
   const searchResults = document.querySelector(".search-results");

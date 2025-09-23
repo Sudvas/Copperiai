@@ -306,12 +306,13 @@ font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 .banner-text h1 {
-  font-size: 50px;
-  font-weight: 900;
-  margin-bottom: 30px;
-  color: #fff;
-  text-transform: uppercase;
-  line-height: 1.2;
+ font-size: 70px;
+line-height: 70px;
+text-transform: uppercase;
+color: #f1f1f1;
+font-weight: 700;
+font-family: "Poppins";
+text-align: center;;
 }
 .banner-text h1 span { display: block; }
 .banner-text h1 span:last-child {
@@ -327,14 +328,14 @@ border-radius: 6px;
   text-transform: uppercase;
   border: none;
   transition: background 0.3s ease;
-  margin: 40px 0 20px;
+  margin: 50px 0 20px;
 }
 .buy-now:hover { background: #f26522; }
 
 /* === SIDE ARROWS === */
 .side-arrows {
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 0;
   right: 0;
   width: 100%;
@@ -344,8 +345,8 @@ border-radius: 6px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   font-size: 24px;
   border-radius: 50%;
   display: flex;
@@ -612,13 +613,11 @@ background-color: #30302e;
 
 
 .bottom-subtitle {
-  font-size: 28px;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  color: #000;
-  text-align: center;
-  margin: 40px 0;
-  text-transform: uppercase;
+font-size: 40px;
+line-height: 422px;
+color: #30302e;
+font-weight: 700;
+font-family: "Poppins";
 }
 .carousel-container {
   overflow: hidden;
@@ -668,7 +667,7 @@ background-color: #30302e;
 
 .brand-logo {
   text-align: center;
-  padding: 11px 0;
+  padding: 14px 0;
 }
 
 .brand-logo h1 {

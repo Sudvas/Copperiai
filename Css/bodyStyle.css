@@ -16,38 +16,25 @@ h1 {
 }
 
 .carousel-container {
+  overflow: hidden;
   width: 100%;
-  max-width: 1300px;      
-  padding: 0 60px;        
-  margin: 0 auto;
-  overflow: visible;      
-  position: relative;
+  max-width: 1300px;
 }
 
 .carousel-track {
   display: flex;
-  justify-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 24px;
-  align-items: flex-start;
-  transition: transform 0.5s ease-in-out;
-  padding: 24px 0;
+  scroll-behavior: smooth;
 }
 
-
 .card {
-  flex: 0 0 55%;
-  max-width: 460px;
-  min-width: 260px;
-  min-height: 480px;
-  box-sizing: border-box;
-  padding: 28px;
-  text-align: center;
-  background: #fff;
-  margin: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex: 0 0 calc(33.33% - 16px); /* 3 cards per row */
+  scroll-snap-align: center;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .card img {

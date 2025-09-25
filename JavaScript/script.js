@@ -1,78 +1,50 @@
-// === GLOBAL CART STATE & FUNCTION ===
-let cart = [];
+document.addEventListener("DOMContentLoaded", () => {
+  // === CART FUNCTIONALITY ===
+  const cartToggle = document.getElementById("cart-toggle");
+  const cartDropdown = document.getElementById("cart-dropdown");
+  let cart = [];
 
-function updateCart() {
-  const cartItemsList = document.getElementById("cart-items");
-  const cartCount = document.getElementById("cart-count");
-  const emptyCartMsg = document.getElementById("empty-cart");
+  function updateCart() {
+    const cartItemsList = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    const emptyCartMsg = document.getElementById("empty-cart");
 
-  cartItemsList.innerHTML = "";
+    cartItemsList.innerHTML = "";
 
-  if (cart.length === 0) {
-    emptyCartMsg.style.display = "block";
-  } else {
-    emptyCartMsg.style.display = "none";
-    cart.forEach((item, index) => {
-      const li = document.createElement("li");
-      li.innerHTML = `
-        ${item.name} - ${item.price}
-        <button data-index="${index}">X</button>
-      `;
-      cartItemsList.appendChild(li);
+    if (cart.length === 0) {
+      emptyCartMsg.style.display = "block";
+    } else {
+      emptyCartMsg.style.display = "none";
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          ${item.name} - ${item.price}
+          <button data-index="${index}">X</button>
+        `;
+        cartItemsList.appendChild(li);
+      });
+    }
+
+    cartCount.textContent = cart.length;
+
+    document.querySelectorAll("#cart-items button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const index = btn.getAttribute("data-index");
+        cart.splice(index, 1);
+        updateCart();
+      });
     });
   }
 
-  cartCount.textContent = cart.length;
-
-  // Remove item from cart
-  document.querySelectorAll("#cart-items button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const index = btn.getAttribute("data-index");
-      cart.splice(index, 1);
-      updateCart();
-    });
-  });
-}
-
-// === CARD CAROUSEL ===
-const track = document.querySelector('.carousel-track');
-const cards = document.querySelectorAll('.card');
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
-let index = 0;
-
-function updateCarousel() {
-  const cardWidth = cards[0].getBoundingClientRect().width + 40;
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
-}
-
-prevButton.addEventListener('click', () => {
-  index = (index - 1 + cards.length) % cards.length;
-  updateCarousel();
-});
-
-nextButton.addEventListener('click', () => {
-  index = (index + 1) % cards.length;
-  updateCarousel();
-});
-
-// === CART LOGIC ===
-document.addEventListener("DOMContentLoaded", () => {
-  const buyButtons = document.querySelectorAll(".buy-now1");
-  const cartToggle = document.getElementById("cart-toggle");
-  const cartDropdown = document.getElementById("cart-dropdown");
-
-  buyButtons.forEach(button => {
+  document.querySelectorAll(".buy-now1").forEach(button => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
       const card = button.closest(".card");
       const itemName = card.querySelector("h3").textContent;
       const itemPrice = card.querySelector(".price").textContent;
 
-      const item = { name: itemName, price: itemPrice };
-      cart.push(item);
+      cart.push({ name: itemName, price: itemPrice });
       updateCart();
-
       alert(`${itemName} added to cart!`);
     });
   });
@@ -81,15 +53,37 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     cartDropdown.classList.toggle("hidden");
   });
-});
 
-// === SEARCH BAR ===
-document.addEventListener("DOMContentLoaded", () => {
+  // === SCROLLING CAROUSEL FUNCTIONALITY ===
+  document.querySelectorAll(".carousel-container").forEach(container => {
+    const track = container.querySelector(".carousel-track");
+    const prev = container.nextElementSibling?.querySelector("#prev");
+    const next = container.nextElementSibling?.querySelector("#next");
+
+    const card = track.querySelector(".card");
+    const cardStyle = window.getComputedStyle(card);
+    const gap = parseInt(cardStyle.marginRight || 24); // default gap between cards
+    const scrollAmount = card.offsetWidth + gap;
+
+    if (next) {
+      next.addEventListener("click", () => {
+        track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+    }
+
+    if (prev) {
+      prev.addEventListener("click", () => {
+        track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+    }
+  });
+
+  // === SEARCH FUNCTIONALITY ===
   const searchInput = document.querySelector(".search-input");
   const searchResults = document.querySelector(".search-results");
   const cards = document.querySelectorAll(".card");
 
-  function searchItems() {
+  searchInput?.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
     searchResults.innerHTML = "";
 
@@ -101,21 +95,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let found = 0;
     cards.forEach(card => {
       const title = card.querySelector("h3").textContent;
-      const price = card.querySelector(".price")?.textContent || "";
+      const price = card.querySelector(".price").textContent;
+
       if (title.toLowerCase().includes(query)) {
         const resultItem = document.createElement("div");
         resultItem.textContent = `${title} - ${price}`;
 
-        // === ADD TO CART ON CLICK (NO SCROLL) ===
         resultItem.addEventListener("click", () => {
-          const itemName = title;
-          const itemPrice = price;
-
-          const item = { name: itemName, price: itemPrice };
-          cart.push(item);
+          cart.push({ name: title, price: price });
           updateCart();
-
-          alert(`${itemName} added to cart!`);
+          alert(`${title} added to cart!`);
           searchResults.classList.add("hidden");
         });
 
@@ -129,9 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       searchResults.classList.add("hidden");
     }
-  }
-
-  searchInput.addEventListener("input", searchItems);
+  });
 
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".search-area")) {

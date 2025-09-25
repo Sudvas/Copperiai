@@ -786,3 +786,37 @@ body.menu-active .right-controls {
   color: #fff;
   cursor: pointer;
 }
+
+.section-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  background: #f9f9f9;
+  display: none;
+}
+
+.section-content.active {
+  display: block;
+}
+
+.lang-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #fff;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 8px center, right 10px center;
+  background-size: 20px 14px, 12px 12px;
+  padding: 8px 35px 8px 35px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  
+  /* Arrow icon as second background */
+  background-image:
+    url("../images/flag-uk.png"),
+    url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}

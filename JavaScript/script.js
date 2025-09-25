@@ -1,37 +1,67 @@
-// Card carousel
+// === GLOBAL CART STATE & FUNCTION ===
+let cart = [];
+
+function updateCart() {
+  const cartItemsList = document.getElementById("cart-items");
+  const cartCount = document.getElementById("cart-count");
+  const emptyCartMsg = document.getElementById("empty-cart");
+
+  cartItemsList.innerHTML = "";
+
+  if (cart.length === 0) {
+    emptyCartMsg.style.display = "block";
+  } else {
+    emptyCartMsg.style.display = "none";
+    cart.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${item.name} - ${item.price}
+        <button data-index="${index}">X</button>
+      `;
+      cartItemsList.appendChild(li);
+    });
+  }
+
+  cartCount.textContent = cart.length;
+
+  // Remove item from cart
+  document.querySelectorAll("#cart-items button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const index = btn.getAttribute("data-index");
+      cart.splice(index, 1);
+      updateCart();
+    });
+  });
+}
+
+// === CARD CAROUSEL ===
 const track = document.querySelector('.carousel-track');
 const cards = document.querySelectorAll('.card');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 let index = 0;
- 
+
 function updateCarousel() {
   const cardWidth = cards[0].getBoundingClientRect().width + 40;
   track.style.transform = `translateX(-${index * cardWidth}px)`;
 }
- 
+
 prevButton.addEventListener('click', () => {
   index = (index - 1 + cards.length) % cards.length;
   updateCarousel();
 });
- 
+
 nextButton.addEventListener('click', () => {
   index = (index + 1) % cards.length;
   updateCarousel();
 });
 
-// Cart
+// === CART LOGIC ===
 document.addEventListener("DOMContentLoaded", () => {
   const buyButtons = document.querySelectorAll(".buy-now1");
   const cartToggle = document.getElementById("cart-toggle");
   const cartDropdown = document.getElementById("cart-dropdown");
-  const cartItemsList = document.getElementById("cart-items");
-  const cartCount = document.getElementById("cart-count");
-  const emptyCartMsg = document.getElementById("empty-cart");
 
-  let cart = [];
-
-  // Add to cart
   buyButtons.forEach(button => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
@@ -42,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = { name: itemName, price: itemPrice };
       cart.push(item);
       updateCart();
+
+      alert(`${itemName} added to cart!`);
     });
   });
 
@@ -49,36 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     cartDropdown.classList.toggle("hidden");
   });
-
-  function updateCart() {
-    cartItemsList.innerHTML = "";
-    if (cart.length === 0) {
-      emptyCartMsg.style.display = "block";
-    } else {
-      emptyCartMsg.style.display = "none";
-      cart.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          ${item.name} - ${item.price}
-          <button data-index="${index}">X</button>
-        `;
-        cartItemsList.appendChild(li);
-      });
-    }
-    cartCount.textContent = cart.length;
-
-    // Remove item from cart
-    document.querySelectorAll("#cart-items button").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const index = btn.getAttribute("data-index");
-        cart.splice(index, 1);
-        updateCart();
-      });
-    });
-  }
 });
 
-//Search bar (reikes dar fix)
+// === SEARCH BAR ===
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector(".search-input");
   const searchResults = document.querySelector(".search-results");
@@ -100,10 +105,17 @@ document.addEventListener("DOMContentLoaded", () => {
       if (title.toLowerCase().includes(query)) {
         const resultItem = document.createElement("div");
         resultItem.textContent = `${title} - ${price}`;
-        
-        // scroll to prodc
+
+        // === ADD TO CART ON CLICK (NO SCROLL) ===
         resultItem.addEventListener("click", () => {
-          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          const itemName = title;
+          const itemPrice = price;
+
+          const item = { name: itemName, price: itemPrice };
+          cart.push(item);
+          updateCart();
+
+          alert(`${itemName} added to cart!`);
           searchResults.classList.add("hidden");
         });
 

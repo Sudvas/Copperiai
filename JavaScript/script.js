@@ -127,24 +127,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-// language 
-<script>
-  const langDropdown = document.querySelector('.lang-dropdown');
 
-  const flags = {
-    "English": "images/flag-uk.png",
-    "Deutsch": "images/flag-germany.png",
-    "Français": "images/flag-france.png"
-  };
 
-  function updateFlag() {
-    const selectedLang = langDropdown.value;
-    const flagUrl = flags[selectedLang] || flags["English"];
 
-    langDropdown.style.backgroundImage = `url('${flagUrl}'), url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`;
-  }
+const langDropdown = document.getElementById('langDropdown');
 
-  langDropdown.addEventListener('change', updateFlag);
-  window.addEventListener('DOMContentLoaded', updateFlag);
-</script>
+const flags = {
+  "English": "images/flag-uk.png",
+  "Deutsch": "images/flag-germany.png",
+  "Français": "images/flag-france.png"
+};
+
+function updateFlag() {
+  const selectedLang = langDropdown.value;
+  const flagUrl = flags[selectedLang] || flags["English"];
+
+  langDropdown.style.backgroundImage = `url('${flagUrl}'), url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`;
+}
+
+langDropdown.addEventListener('change', updateFlag);
+window.addEventListener('DOMContentLoaded', updateFlag);
 

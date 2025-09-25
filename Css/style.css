@@ -786,3 +786,15 @@ body.menu-active .right-controls {
   color: #fff;
   cursor: pointer;
 }
+
+.section-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  background: #f9f9f9;
+  display: none;
+}
+
+.section-content.active {
+  display: block;
+}

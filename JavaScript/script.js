@@ -126,3 +126,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// See more card
+document.addEventListener('DOMContentLoaded', () => {
+    const seeMoreButtons = document.querySelectorAll('.see-more');
+    const seeLessButtons = document.querySelectorAll('.see-less');
+
+    seeMoreButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = btn.closest('.card');
+        card.classList.add('flipped');
+      });
+    });
+
+    seeLessButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = btn.closest('.card');
+        card.classList.remove('flipped');
+      });
+    });
+  });

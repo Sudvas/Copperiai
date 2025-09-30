@@ -1,0 +1,13 @@
+.about-us-section {
+  text-align: center;
+}
+
+.about-us-section p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #333;
+}

@@ -7,8 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="Css/style.css" />
   <link rel="stylesheet" href="Css/bodyStyle.css">
+  <link rel="stylesheet" href="css/footer.css"/>
   <script src="JavaScript/js.js" defer></script>
   <script src="JavaScript/script.js" defer></script>
+  <script src="JavaScript/subscribe.js" defer></script>
 </head>
 <body>
  <div class="hero">
@@ -468,12 +470,14 @@
     <div class="footer-container">
       <h1 class="footer-brand">Eflyer</h1>
 
-      <div class="newsletter">
-        <input type="text" class="newsletter-input" placeholder="Your Email" name="email" />
-        <span class="subscribe-button">
-          <a href="#">Subscribe</a>
-        </span>
-      </div>
+<div class="newsletter">
+  <input type="text" class="newsletter-input" placeholder="Your Email" name="email" id="emailInput" />
+  <span class="subscribe-button" id="subscribeButton">
+    <a href="javascript:void(0);">Subscribe</a>
+  </span>
+  <p id="thankYouMessage" style="display:none; font-size: 30px; color: white; font-weight: bold;">Thank you for subscribing!</p>
+</div>
+
 
       <div class="footer-links">
         <ul>

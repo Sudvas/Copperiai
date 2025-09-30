@@ -96,7 +96,7 @@ body {
   font-size: 24px;
   font-weight: 600;
 }
-.menu a:hover { background-color: #f26522; }
+.menu a:hover { background-color: #f5f5f5; }
 
 .menu-close {
   position: absolute;

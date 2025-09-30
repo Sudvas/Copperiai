@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eflyer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../Css/style.css" />
+  <link rel="stylesheet" href="about.css">
+  <script src="JavaScript/js.js" defer></script>
+  <script src="JavaScript/script.js" defer></script>
+</head>
+<body>
+ <div class="hero">
+
+    <!-- Top nav -->
+    <div class="top-nav">
+      <a href="#">Best Sellers</a>
+      <a href="#">Gift Ideas</a>
+      <a href="#">New Releases</a>
+      <a href="#">Today's Deals</a>
+      <a href="#">Customer Service</a>
+    </div>
+<div class="brand-logo">
+  <h1>Eflyer</h1>
+</div>
+
+    <!-- Header controls -->
+    <div class="header-controls">
+
+      <!-- Hamburger button -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Search -->
+<div class="search-area">
+  <select class="category-dropdown">
+    <option>All Category</option>
+    <option>Electronics</option>
+    <option>Clothing</option>
+    <option>Accessories</option>
+  </select>
+  <input type="text" placeholder="Search" class="search-input" />
+  <button class="search-btn"></button>
+  <div class="search-results hidden"></div>
+</div>
+
+
+      <!-- Right controls -->
+      <div class="right-controls">
+   <select class="lang-dropdown" id="langDropdown">
+    <option value="English">English</option>
+    <option value="Deutsch">Deutsch</option>
+    <option value="Français">Français</option>
+  </select>
+
+  <script src="script.js"></script>
+</select>
+        <a href="#" class="icon-link" id="cart-toggle">🛒 Cart (<span id="cart-count">0</span>)</a>
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p id="empty-cart">Cart is empty.</p>
+        </div>
+        <a href="#" class="icon-link" id="loginBtn">👤 LOGIN</a>
+      </div>
+    </div>
+
+    <!-- Banner content -->
+    <header class="banner-content">
+
+      <!-- Fullscreen menu -->
+      <nav class="menu" id="menu" aria-hidden="true">
+        <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="banner-text">
+        <h1>
+          <span>GET START</span>
+          <span>YOUR FAVORIOT SHOPING</span>
+        </h1>
+<button class="buy-now" onclick="document.getElementById('fashion-section').scrollIntoView({behavior: 'smooth'})">
+  Buy Now
+</button>
+<h2 id="fashion-section" class="bottom-subtitle1">Man & Woman Fashion</h2>
+        </div>
+      </div>
+
+      <!-- Side Arrows -->
+      <div class="side-arrows">
+        <div class="arrow left" id="arrowLeft">&#10094;</div>
+        <div class="arrow right" id="arrowRight">&#10095;</div>
+      </div>
+    </header>
+    <!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="submitLogin">Login</button>
+    <div class="error" id="loginError"></div>
+  </div>
+</div>
+<!--Bodt-->
+<section id="about-us" class="about-us-section">
+  <h2>About Us</h2>
+  <p>
+    Welcome to <strong>Eflyer</strong>! 
+    
+    We are your one-stop online shop dedicated to offering the best in electronics, jewelry, and fashion. Whether you're looking for the latest gadgets, stylish accessories, or trendy clothing, we have it all in one place.
+  </p>
+  <p>
+    Our mission is to provide quality products at great prices while ensuring a seamless shopping experience. Customer satisfaction is our top priority, and we're here to help you find exactly what you need.
+  </p>
+  <p>Thank you for choosing Eflyer — happy shopping!</p>
+</section>
+
+<!--Body end-->
+
+  <div class="footer">
+    <div class="footer-container">
+      <h1 class="footer-brand">Eflyer</h1>
+
+      <div class="newsletter">
+        <input type="text" class="newsletter-input" placeholder="Your Email" name="email" />
+        <span class="subscribe-button">
+          <a href="#">Subscribe</a>
+        </span>
+      </div>
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Gift Ideas</a></li>
+          <li><a href="#">New Releases</a></li>
+          <li><a href="#">Today's Deals</a></li>
+          <li><a href="#">Customer Service</a></li>
+        </ul>
+      </div>
+
+      <div class="contact-info">
+        Help Line Number : <a href="#">+1 1800 1200 1200</a>
+      </div>
+
+      <div class="footer-credit">
+        © 2020 All Rights Reserved. Design by Free Html Templates
+      </div>
+    </div>
+  </div>
+</body>
+</html>

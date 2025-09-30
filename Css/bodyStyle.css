@@ -23,14 +23,14 @@ h1 {
 
 .carousel-track {
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
   gap: 24px;
   scroll-behavior: smooth;
 }
 
 .card {
-  flex: 0 0 calc(33.33% - 16px); /* 3 cards per view */
+  flex: 0 0 calc(32% - 16px); /* 3 cards per view */
   scroll-snap-align: center;
   background: white;
   padding: 20px;
@@ -38,7 +38,8 @@ h1 {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 500px; /* set a base card height */
+  min-height: 500px;
+  justify-content: space-between; 
 }
 
 .card-inner {
@@ -54,7 +55,7 @@ h1 {
 }
 
 .card-front, .card-back {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
@@ -65,6 +66,8 @@ h1 {
   padding: 20px;
   box-sizing: border-box;
   background: white;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .card-back {
@@ -105,6 +108,7 @@ h1 {
   object-fit: contain;
   cursor: pointer;
   transition: transform 0.2s;
+  margin-bottom: 20px;
 }
  
 .card img:hover {
@@ -120,7 +124,8 @@ h1 {
 .actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  align-items: center;
+  margin-top: auto;
 }
  
 .actions a {
@@ -256,7 +261,25 @@ h1 {
   margin-left: 1042px; 
 }
 
+.checkout-btn {
+  background-color: #e0b62c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
 
+.checkout-btn:hover {
+  background-color: #c5a019;
+}
+
+.checkout-btn:focus {
+  outline: none;
+}
 
 
 

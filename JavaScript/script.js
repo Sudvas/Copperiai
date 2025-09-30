@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // === CART FUNCTIONALITY ===
   const cartToggle = document.getElementById("cart-toggle");
   const cartDropdown = document.getElementById("cart-dropdown");
+  const checkoutBtn = document.getElementById("checkout-btn");
   let cart = [];
 
   function updateCart() {
@@ -53,6 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     cartDropdown.classList.toggle("hidden");
   });
+
+  checkoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (cart.length === 0) {
+      alert("Your cart is empty. Please add some items before checking out.");
+    } else {
+      alert("Purchase succesful!");
+      cart = [];
+      updateCart();
+    }
+  })
 
   // === SCROLLING CAROUSEL FUNCTIONALITY ===
   document.querySelectorAll(".carousel-container").forEach(container => {

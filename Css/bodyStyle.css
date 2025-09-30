@@ -261,7 +261,25 @@ h1 {
   margin-left: 1042px; 
 }
 
+.checkout-btn {
+  background-color: #e0b62c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
 
+.checkout-btn:hover {
+  background-color: #c5a019;
+}
+
+.checkout-btn:focus {
+  outline: none;
+}
 
 
 

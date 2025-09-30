@@ -30,7 +30,7 @@ h1 {
 }
 
 .card {
-  flex: 0 0 calc(33.33% - 16px); /* 3 cards per view */
+  flex: 0 0 calc(32% - 16px); /* 3 cards per view */
   scroll-snap-align: center;
   background: white;
   padding: 20px;
@@ -39,6 +39,7 @@ h1 {
   flex-direction: column;
   height: 100%;
   min-height: 500px;
+  justify-content: space-between; 
 }
 
 .card-inner {
@@ -107,6 +108,7 @@ h1 {
   object-fit: contain;
   cursor: pointer;
   transition: transform 0.2s;
+  margin-bottom: 20px;
 }
  
 .card img:hover {

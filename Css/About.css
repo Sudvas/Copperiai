@@ -1,0 +1,89 @@
+/* Make the hero section take full viewport height and center content */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  background-color: #f5f5f5; /* optional background */
+}
+
+/* Brand logo styling */
+.brand-logo h1 {
+  font-size: 6rem;      /* big, bold text */
+  font-weight: 900;
+  color: #333;
+  margin: 0;
+}
+
+/* Banner text styling */
+.banner-text {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-text p strong {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 2.5;
+}
+
+.banner-text p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* About section styling */
+.about-section {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 50px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #f26522;
+}
+
+.about-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.about-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.about-section li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+/* LOGO (Eflyer) */
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #fff;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}

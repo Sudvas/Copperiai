@@ -108,21 +108,153 @@ body {
   overflow: hidden;
 }
 
-/* MEDIA QUERIES */
+/* Tablet / Small screens */
 @media (max-width: 768px) {
   .header .container {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 0 15px;
+  }
+  .logo {
+    font-size: 24px;
   }
   .nav ul {
+    gap: 15px;
+  }
+}
+
+/* Phones up to 480px */
+@media (max-width: 480px) {
+  /* HEADER: Keep nav side-by-side */
+  .header .container {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+  }
+
+  .logo {
+    font-size: 22px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
-  }
-  .contact-container {
-    flex-direction: column;
-  }
-  .contact-details, .contact-form {
+    justify-content: center;
     width: 100%;
+  }
+
+  .nav a {
+    padding: 5px 8px;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  /* CONTACT SECTION */
+  .contact {
+    padding: 40px 15px;
+  }
+
+  .contact-details h2,
+  .contact-form h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .map iframe {
+    height: 250px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    padding: 10px 8px;
+  }
+
+  .footer-links ul {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-links ul {
+    margin: 0;
+    padding: 0; 
+    gap: 2px; 
+  }
+
+  .footer-links ul li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .header .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .logo {
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .nav ul {
+    justify-content: center;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .footer-container {
+    padding: 2px 3px;
+  }
+
+  .footer-brand {
+    margin-bottom: 2px;
+  }
+
+  .newsletter {
+    margin-bottom: 2px;
+  }
+
+  .newsletter input {
+    margin-bottom: 2px;
+  }
+
+  .subscribe-button {
+    margin-top: 2px;
+  }
+
+  .footer-links ul {
+    margin: 0;
+    padding: 0;
+    gap: 2px;
+  }
+
+  .footer-credit,
+  .contact-info {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    line-height: 1.1;
+    font-size: 11px;
   }
 }

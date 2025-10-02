@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../Css/style.css" />
   <link rel="stylesheet" href="../Css/bodyStyle.css">
-  <link rel="stylesheet" href="../css/footer.css"/>
+  <link rel="stylesheet" href="../Css/footer.css"/>
   <script src="../JavaScript/js.js" defer></script>
   <script src="../JavaScript/script.js" defer></script>
   <script src="../JavaScript/subscribe.js" defer></script>
@@ -40,7 +40,7 @@
       <!-- Search -->
 <div class="search-area">
   <select class="category-dropdown" id="categoryDropdown">
-    <option value="index.html">All Category</option>
+    <option value="../index.html">All Category</option>
     <option value="electronic.html">Electronics</option>
     <option value="fashion.html">Clothing</option>
     <option value="jewellery.html">Accessories</option>
@@ -79,10 +79,10 @@
 <!-- Fullscreen menu -->
 <nav class="menu" id="menu" aria-hidden="true">
   <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../services.html">Services</a>
+  <a href="../contact.html">Contact</a>
 </nav>
 
 
@@ -94,7 +94,7 @@
 <button class="buy-now" onclick="document.getElementById('fashion-section').scrollIntoView({behavior: 'smooth'})">
   Buy Now
 </button>
-<h2 id="fashion-section" class="bottom-subtitle1">Man & Woman Fashion</h2>
+    <h2 id="fashion-section" class="bottom-subtitle1">Electronics</h2>
         </div>
       </div>
 
@@ -119,48 +119,128 @@
     <!--Body start-->
 <div class="mainBody">
   <!--Electronic section start-->
-    <h1>Electronic</h1>
   <div class="carousel-container">
     <div class="carousel-track">
       <!-- Card 1 -->
-      <div class="card">
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
         <h3>Laptop</h3>
         <p class="price">Start Price $100</p>
+        <div class="image-container">
         <a href="#">
           <img src="../images/Laptop.png" alt="Laptop">
         </a>
+      </div>
         <div class="actions">
-          <a href="#" class="buy-now">Buy Now</a>
+          <a href="#" class="buy-now1">Buy Now</a>
           <a href="#" class="see-more">See more</a>
         </div>
       </div>
- 
+      </div>
+    </div>
+
       <!-- Card 2 -->
-      <div class="card">
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
         <h3>Mobile</h3>
         <p class="price">Start Price $100</p>
+        <div class="image-container">
         <a href="#">
           <img src="../images/Mobile.png" alt="Mobile">
         </a>
+      </div>
         <div class="actions">
-          <a href="#" class="buy-now">Buy Now</a>
+          <a href="#" class="buy-now1">Buy Now</a>
           <a href="#" class="see-more">See more</a>
         </div>
       </div>
- 
+      </div>
+    </div>
+
       <!-- Card 3 -->
-      <div class="card">
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
         <h3>Computers</h3>
         <p class="price">Start Price $100</p>
+        <div class="image-container">
         <a href="#">
           <img src="../images/Computers.png" alt="Computers">
         </a>
+      </div>
         <div class="actions">
-          <a href="#" class="buy-now">Buy Now</a>
+          <a href="#" class="buy-now1">Buy Now</a>
           <a href="#" class="see-more">See more</a>
         </div>
       </div>
- 
+      </div>
+    </div>
+
+      <!-- Card 4 -->
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
+        <h3>Monitors</h3>
+        <p class="price">Price $30</p>
+        <div class="image-container">
+        <a href="#">
+          <img src="../images/monitors.webp" alt="monitors">
+        </a>
+      </div>
+        <div class="actions">
+          <a href="#" class="buy-now1">Buy now</a>
+          <a href="#" class="see-more">See more</a>
+        </div>
+       </div>
+      </div>
+    </div>
+
+      <!-- Card 5 -->
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
+        <h3>Keyboard</h3>
+        <p class="price">Price $30</p>
+        <div class="image-container">
+        <a href="#">
+          <img src="../images/keyboard.webp" alt="keyboard">
+        </a>
+      </div>
+        <div class="actions">
+          <a href="#" class="buy-now1">Buy now</a>
+          <a href="#" class="see-more">See more</a>
+        </div>
+       </div>
+      </div>
+    </div>
+
+      <!-- Card 6 -->
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
+        <h3>Mouse</h3>
+        <p class="price">Price $30</p>
+        <div class="image-container">
+        <a href="#">
+          <img src="../images/mouse bleh.jpg" alt="mice">
+        </a>
+      </div>
+        <div class="actions">
+          <a href="#" class="buy-now1">Buy now</a>
+          <a href="#" class="see-more">See more</a>
+        </div>
+       </div>
+      </div>
+    </div>
+
     </div>
   </div>
  
@@ -169,20 +249,30 @@
     <button id="next">&#8594;</button>
   </div>
   <!--Eletcronic section end-->
+  <!-- Loader thingy whatever-->
+<div class="loader-container">
+  <div class="lds-roller">
+    <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
+  </div>
 </div>
-<!--Body end-->
-<!--Footer-->
+  <!-- Loader end bruh-->
+</div>
+<!--Body end--> 
+
   <div class="footer">
     <div class="footer-container">
-
       <h1 class="footer-brand">Eflyer</h1>
 
-      <div class="newsletter">
-        <input type="text" class="newsletter-input" placeholder="Your Email" name="email">
-        <span class="subscribe-button">
-          <a href="#">Subscribe</a>
-        </span>
-      </div>
+ <div class="newsletter">
+  <input type="text" class="newsletter-input" placeholder="Your Email" name="email" id="emailInput" />
+  <span class="subscribe-button" id="subscribeButton">
+    <a href="javascript:void(0);">Subscribe</a>
+  </span>
+  <p id="thankYouMessage" style="display:none; font-size: 30px; color: white; font-weight: bold;">Thank you for subscribing!</p>
+  <span id="resetButton" style="display:none; color: white; cursor: pointer; text-decoration: underline;">Enter a new email</span>
+</div>
+
 
       <div class="footer-links">
         <ul>
@@ -201,7 +291,6 @@
       <div class="footer-credit">
         © 2020 All Rights Reserved. Design by Free Html Templates
       </div>
-
     </div>
   </div>
 </body>

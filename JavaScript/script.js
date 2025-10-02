@@ -180,3 +180,10 @@ function updateFlag() {
 langDropdown.addEventListener('change', updateFlag);
 window.addEventListener('DOMContentLoaded', updateFlag);
 
+//Category dropdown page yeah yeah
+document.getElementById("categoryDropdown").addEventListener("change", function() {
+  const selectedPage = this.value;
+  if (selectedPage) {
+    window.location.href = selectedPage;
+  }
+})

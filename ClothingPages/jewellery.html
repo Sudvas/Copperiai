@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../Css/bodyStyle.css">
-    <link rel="stylesheet" href="../Css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eflyer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../Css/style.css" />
+  <link rel="stylesheet" href="../Css/bodyStyle.css">
+  <link rel="stylesheet" href="../css/footer.css"/>
+  <script src="../JavaScript/js.js" defer></script>
+  <script src="../JavaScript/script.js" defer></script>
+  <script src="../JavaScript/subscribe.js" defer></script>
 </head>
 <body>
-      <div class="hero">
+ <div class="hero">
 
+    <!-- Top nav -->
     <div class="top-nav">
       <a href="#">Best Sellers</a>
       <a href="#">Gift Ideas</a>
@@ -17,91 +23,224 @@
       <a href="#">Today's Deals</a>
       <a href="#">Customer Service</a>
     </div>
+<div class="brand-logo">
+  <h1>Eflyer</h1>
+</div>
+
+    <!-- Header controls -->
+    <div class="header-controls">
+
+      <!-- Hamburger button -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Search -->
+<div class="search-area">
+  <select class="category-dropdown" id="categoryDropdown">
+    <option value="../index.html">All Category</option>
+    <option value="electronic.html">Electronics</option>
+    <option value="fashion.html">Clothing</option>
+    <option value="jewellery.html">Accessories</option>
+  </select>
+  <input type="text" placeholder="Search" class="search-input" />
+  <button class="search-btn"></button>
+  <div class="search-results hidden"></div>
+</div>
+
+
+      <!-- Right controls -->
+      <div class="right-controls">
+   <select class="lang-dropdown" id="langDropdown">
+    <option value="English">English</option>
+    <option value="Deutsch">Deutsch</option>
+    <option value="Français">Français</option>
+  </select>
+
+  <script src="script.js"></script>
+</select>
+        <a href="#" class="icon-link" id="cart-toggle">🛒 Cart (<span id="cart-count">0</span>)</a>
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p id="empty-cart">Cart is empty.</p>
+        <button id="checkout-btn" class="checkout-btn">Checkout</button>
+        </div>
+        <a href="#" class="icon-link" id="loginBtn">👤 LOGIN</a>
+      </div>
+    </div>
 
     <!-- Banner content -->
     <header class="banner-content">
-      <div class="header-controls">
-        <div class="hamburger">&#9776;</div>
 
-        <div class="search-area">
-          <select class="category-dropdown">
-            <option>All Category</option>
-            <option>Electronics</option>
-            <option>Clothing</option>
-            <option>Accessories</option>
-          </select>
-          <input type="text" placeholder="Search" class="search-input" />
-          <button class="search-btn">&#128269;</button>
-        </div>
+      <!-- Fullscreen menu -->
+<!-- Fullscreen menu -->
+<nav class="menu" id="menu" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../services.html">Services</a>
+  <a href="../contact.html">Contact</a>
+</nav>
 
-        <div class="right-controls">
-          <select class="lang-dropdown">
-            <option>English</option>
-            <option>Deutsch</option>
-            <option>Français</option>
-          </select>
-          <a href="#" class="icon-link">🛒 Cart</a>
-          <a href="#" class="icon-link">👤 Login</a>
-        </div>
-      </div>
 
       <div class="banner-text">
-        <h1>GET START YOUR FAVORIOT SHOPING</h1>
-        <button class="buy-now">Buy Now</button>
+        <h1>
+          <span>GET START</span>
+          <span>YOUR FAVORIOT SHOPING</span>
+        </h1>
+<button class="buy-now" onclick="document.getElementById('fashion-section').scrollIntoView({behavior: 'smooth'})">
+  Buy Now
+</button>
+    <h2 id="fashion-section" class="bottom-subtitle1">Jewellery Accessories</h2>
+        </div>
       </div>
 
+      <!-- Side Arrows -->
       <div class="side-arrows">
-        <div class="arrow left">&#10094;</div>
-        <div class="arrow right">&#10095;</div>
+        <div class="arrow left" id="arrowLeft">&#10094;</div>
+        <div class="arrow right" id="arrowRight">&#10095;</div>
       </div>
     </header>
-
+    <!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="submitLogin">Login</button>
+    <div class="error" id="loginError"></div>
   </div>
+</div>
+
     <!--Body start-->
 <div class="mainBody">
-      <!--Jewellery section start-->
-    <h1>Jewellery Accessories</h1>
+  <!--Jewellery section start-->
   <div class="carousel-container">
     <div class="carousel-track">
       <!-- Card 1 -->
-      <div class="card">
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
         <h3>Jumkas</h3>
         <p class="price">Start Price $100</p>
+        <div class="image-container">
         <a href="#">
           <img src="../images/Jumkas.png" alt="Jumkas">
         </a>
+      </div>
         <div class="actions">
-          <a href="#" class="buy-now">Buy Now</a>
+          <a href="#" class="buy-now1">Buy Now</a>
           <a href="#" class="see-more">See more</a>
         </div>
       </div>
- 
+      </div>
+    </div>
+
       <!-- Card 2 -->
-      <div class="card">
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
         <h3>Necklaces</h3>
         <p class="price">Start Price $100</p>
+        <div class="image-container">
         <a href="#">
           <img src="../images/Necklaces.png" alt="Necklaces">
         </a>
+      </div>
         <div class="actions">
-          <a href="#" class="buy-now">Buy Now</a>
+          <a href="#" class="buy-now1">Buy Now</a>
           <a href="#" class="see-more">See more</a>
         </div>
       </div>
- 
+      </div>
+    </div>
+
       <!-- Card 3 -->
-      <div class="card">
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
         <h3>Kangans</h3>
         <p class="price">Start Price $100</p>
+        <div class="image-container">
         <a href="#">
           <img src="../images/Kangans.png" alt="Kangans">
         </a>
+      </div>
         <div class="actions">
-          <a href="#" class="buy-now">Buy Now</a>
+          <a href="#" class="buy-now1">Buy Now</a>
           <a href="#" class="see-more">See more</a>
         </div>
       </div>
- 
+      </div>
+    </div>
+
+            <!-- Card 4 -->
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
+        <h3>Necklaces</h3>
+        <p class="price">Price $30</p>
+        <div class="image-container">
+        <a href="#">
+          <img src="../images/Necklaces.png" alt="Necklaces">
+        </a>
+      </div>
+        <div class="actions">
+          <a href="#" class="buy-now1">Buy now</a>
+          <a href="#" class="see-more">See more</a>
+        </div>
+       </div>
+      </div>
+    </div>
+
+      <!-- Card 5 -->
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
+        <h3>Rings</h3>
+        <p class="price">Price $30</p>
+        <div class="image-container">
+        <a href="#">
+          <img src="../images/ring.webp" alt="ring">
+        </a>
+      </div>
+        <div class="actions">
+          <a href="#" class="buy-now1">Buy now</a>
+          <a href="#" class="see-more">See more</a>
+        </div>
+       </div>
+      </div>
+    </div>
+
+      <!-- Card 6 -->
+<div class="card">
+  <div class="card-inner">
+    <!-- Front -->
+    <div class="card-front">
+        <h3>Devil Fruit.?</h3>
+        <p class="price">Price $30</p>
+        <div class="image-container">
+        <a href="#">
+          <img src="../images/devil fruit.webp" alt="piece">
+        </a>
+      </div>
+        <div class="actions">
+          <a href="#" class="buy-now1">Buy now</a>
+          <a href="#" class="see-more">See more</a>
+        </div>
+       </div>
+      </div>
+    </div>
+     
     </div>
   </div>
  
@@ -110,20 +249,25 @@
     <button id="next">&#8594;</button>
   </div>
   <!--Jewellery section end-->
+  <!-- Loader thingy whatever-->
+  <img src="./images/loader.png" alt="Loading..." class="tiny-image">
+  <!-- Loader end bruh-->
 </div>
-<!--Body end-->
-<!--Footer-->
+<!--Body end--> 
+
   <div class="footer">
     <div class="footer-container">
-
       <h1 class="footer-brand">Eflyer</h1>
 
-      <div class="newsletter">
-        <input type="text" class="newsletter-input" placeholder="Your Email" name="email">
-        <span class="subscribe-button">
-          <a href="#">Subscribe</a>
-        </span>
-      </div>
+ <div class="newsletter">
+  <input type="text" class="newsletter-input" placeholder="Your Email" name="email" id="emailInput" />
+  <span class="subscribe-button" id="subscribeButton">
+    <a href="javascript:void(0);">Subscribe</a>
+  </span>
+  <p id="thankYouMessage" style="display:none; font-size: 30px; color: white; font-weight: bold;">Thank you for subscribing!</p>
+  <span id="resetButton" style="display:none; color: white; cursor: pointer; text-decoration: underline;">Enter a new email</span>
+</div>
+
 
       <div class="footer-links">
         <ul>
@@ -142,9 +286,7 @@
       <div class="footer-credit">
         © 2020 All Rights Reserved. Design by Free Html Templates
       </div>
-
     </div>
   </div>
-<script src="../JavaScript/script.js" defer></script>
 </body>
 </html>

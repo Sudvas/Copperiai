@@ -108,6 +108,42 @@ body {
   overflow: hidden;
 }
 
+/* Subscribe form styling */
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  width: 200px;
+}
+
+.subscribe-form .subscribe-button {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.subscribe-form .subscribe-button:hover {
+  background-color: #e05500;
+}
+
 /* Tablet / Small screens */
 @media (max-width: 768px) {
   .header .container {
@@ -119,24 +155,56 @@ body {
   .nav ul {
     gap: 15px;
   }
+
+  /* FOOTER tablet adjustments */
+  .footer-links ul {
+    display: flex;
+    flex-direction: row;   /* keep in row until 480px */
+    flex-wrap: nowrap;     /* prevent wrapping into second line */
+    justify-content: center;
+    gap: 12px;
+    margin: 8px 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto; /* allow horizontal scroll if very tight */
+    -webkit-overflow-scrolling: touch;
+  }
+  .footer-links ul li {
+    white-space: nowrap;
+    flex: 0 0 auto; /* don’t shrink into new line */
+  }
+  .contact-info {
+    margin-bottom: 6px; /* tighter gap */
+    font-size: 14px;
+    text-align: center;
+  }
+  .footer-credit {
+    margin-top: 4px; /* reduce space */
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* SUBSCRIBE form on tablet */
+  .subscribe-form {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 /* Phones up to 480px */
 @media (max-width: 480px) {
-  /* HEADER: Keep nav side-by-side */
+  /* HEADER */
   .header .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px 5px;
   }
-
   .logo {
     font-size: 22px;
     margin-bottom: 8px;
     text-align: center;
   }
-
   .nav ul {
     flex-direction: row;
     flex-wrap: wrap;
@@ -144,67 +212,80 @@ body {
     justify-content: center;
     width: 100%;
   }
-
   .nav a {
     padding: 5px 8px;
     display: inline-block;
     font-size: 14px;
   }
 
-  /* CONTACT SECTION */
-  .contact {
-    padding: 40px 15px;
-  }
-
-  .contact-details h2,
-  .contact-form h2 {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .map iframe {
-    height: 250px;
-  }
-
   /* FOOTER */
   .footer-container {
-    padding: 10px 8px;
+    padding: 8px 6px;
   }
-
   .footer-links ul {
-    flex-direction: column;
-    gap: 6px;
+    flex-direction: column; /* switch to stacked */
     align-items: center;
-  }
-}
-
-@media (max-width: 400px) {
-  .footer-links ul {
-    margin: 0;
-    padding: 0; 
-    gap: 2px; 
-  }
-
-  .footer-links ul li {
+    gap: 4px; /* tighter gaps */
     margin: 0;
     padding: 0;
   }
+  .footer-links ul li {
+    margin: 0;
+    line-height: 1.3;
+  }
+  .contact-info {
+    margin: 4px 0 2px 0;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .footer-credit {
+    margin: 2px 0;
+    font-size: 11px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* SUBSCRIBE form on phone */
+  .subscribe-form {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .subscribe-form input[type="email"],
+  .subscribe-form .subscribe-button {
+    width: 100%;
+    max-width: 260px;
+  }
 }
 
+/* Small phones 400px */
+@media (max-width: 400px) {
+  .footer-links ul {
+    gap: 3px;
+  }
+  .contact-info {
+    margin: 3px 0 1px 0;
+    font-size: 11.5px;
+  }
+  .footer-credit {
+    margin: 1px 0;
+    font-size: 11px;
+  }
+
+  .subscribe-form input[type="email"],
+  .subscribe-form .subscribe-button {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}
+
+/* Ultra small 350px */
 @media (max-width: 350px) {
   .header .container {
     flex-direction: column;
     align-items: center;
     padding: 5px;
   }
-
   .logo {
     margin-bottom: 6px;
     text-align: center;
@@ -212,13 +293,11 @@ body {
     font-size: 18px;
     font-weight: 700;
   }
-
   .nav ul {
     justify-content: center;
     gap: 4px;
     flex-wrap: wrap;
   }
-
   .nav a {
     padding: 3px 6px;
     font-size: 12px;
@@ -227,34 +306,32 @@ body {
   .footer-container {
     padding: 2px 3px;
   }
-
-  .footer-brand {
-    margin-bottom: 2px;
-  }
-
-  .newsletter {
-    margin-bottom: 2px;
-  }
-
-  .newsletter input {
-    margin-bottom: 2px;
-  }
-
-  .subscribe-button {
-    margin-top: 2px;
-  }
-
   .footer-links ul {
-    margin: 0;
-    padding: 0;
     gap: 2px;
   }
-
   .footer-credit,
   .contact-info {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    line-height: 1.1;
+    margin: 1px 0;
     font-size: 11px;
+    line-height: 1.1;
+  }
+
+  .subscribe-form input[type="email"],
+  .subscribe-form .subscribe-button {
+    font-size: 12px;
+    padding: 6px 8px;
+    max-width: 220px;
+  }
+}
+
+/* Extra overrides */
+@media only screen and (max-width: 768px) {
+  .contact-info {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .footer-credit {
+    margin: 0 !important;
   }
 }

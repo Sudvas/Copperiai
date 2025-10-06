@@ -281,14 +281,35 @@ h1 {
   outline: none;
 }
 
-@media (max-width: 768px) {
-  .header .container {
-    padding: 0 15px;
+@media (max-width: 788px) and (min-width: 488px) {
+  .carousel-track{
+    gap: 16px;
   }
-  .logo {
-    font-size: 24px;
+
+.card {
+  flex: 0 0 calc(48% - 10px);
+  min-height: 450px;
+}
+}
+
+@media (max-width: 480px) {
+  .carousel-track {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .nav ul {
-    gap: 15px;
+
+  .card {
+    flex: 0 0 calc(50% - 10px);
+    min-height: 400px;
+    padding: 15px;
+  }
+
+  .card img {
+    max-height: 250px;
+  }
+
+  .actions a {
+    font-size: 14px;
   }
 }

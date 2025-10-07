@@ -98,14 +98,6 @@ body {
   color: #444;
 }
 
-/* FOOTER FIX */
-.footer {
-  background: #252525;
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: auto;
-}
-
 /* Tablet / Small screens */
 @media (max-width: 768px) {
   .header .container {
@@ -118,39 +110,6 @@ body {
     gap: 15px;
   }
 
-  /* FOOTER tablet adjustments */
-  .footer-links ul {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 8px 0;
-    padding: 0;
-    list-style: none;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .footer-links ul li {
-    white-space: nowrap;
-    flex: 0 0 auto;
-  }
-  .contact-info {
-    margin-bottom: 6px;
-    font-size: 14px;
-    text-align: center;
-  }
-  .footer-credit {
-    margin-top: 4px;
-    font-size: 13px;
-    text-align: center;
-  }
-
-  .subscribe-form {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
 
 /* Phones up to 480px */
 @media (max-width: 480px) {
@@ -222,15 +181,7 @@ body {
     max-width: 260px;
     text-align: center;
   }
-  .subscribe-button a {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #ffffff;
-    color: #ffffff;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-  }
+
 }
 
 /* Ultra small (≤350px) */

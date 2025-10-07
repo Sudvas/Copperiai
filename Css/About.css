@@ -104,7 +104,7 @@ body {
 .story-image img {
   width: 100%;
   max-width: 500px;
-  min-width: 300px; /* prevents shrinking */
+  min-width: 300px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -183,7 +183,7 @@ body {
 .team-member img {
   width: 100%;
   height: 250px;
-  min-height: 220px; /* keeps images from getting too small */
+  min-height: 220px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -195,6 +195,22 @@ body {
 .team-member p {
   color: #777;
   font-size: 16px;
+}
+
+/* ✅ TEAM LAYOUT FIXES */
+@media (min-width: 1054px) and (max-width: 1999px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    gap: 35px;
+  }
+}
+@media (min-width: 2000px) {
+  .team-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    max-width: 1600px;
+  }
 }
 
 /* PHILOSOPHY */
@@ -217,169 +233,142 @@ body {
 }
 
 /* ===================================
-   MIDDLE SCREENS (≤ 1024px)
+   CENTERED NON-STRETCH RANGE (1145px–350px)
 =================================== */
-@media (max-width: 1024px) {
-  /* HERO */
-  .about-hero {
-    height: 65vh;
-    background-position: center;
-  }
-  .about-hero h1 {
-    font-size: 2.8rem;
-  }
-  .about-hero p {
-    font-size: 1.15rem;
-  }
-
-  /* STORY SECTION */
-  .story-grid {
-    gap: 30px;
-  }
-  .story-text h2 {
-    font-size: 2rem;
-  }
-  .story-text p {
-    font-size: 1rem;
-  }
-  .story-image img {
-    max-width: 450px;
-    min-width: 300px;
-  }
-
-  /* MISSION SECTION */
-  .about-mission h2 {
-    font-size: 2.2rem;
+@media (max-width: 1145px) and (min-width: 769px) {
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 35px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
   }
   .mission-card {
-    padding: 25px;
-  }
-  .mission-card h3 {
-    font-size: 1.25rem;
-  }
-  .mission-card p {
-    font-size: 0.95rem;
+    max-width: 420px;
+    margin: 0 auto;
   }
 
-  /* TEAM SECTION */
-  .about-team {
-    padding: 80px 20px;
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 35px;
+    justify-content: center;
+    max-width: 950px;
+    margin: 0 auto;
   }
-  .about-team h2 {
-    font-size: 2.2rem;
+  .team-member {
+    max-width: 400px;
+    margin: 0 auto;
   }
-  .team-intro {
-    font-size: 1rem;
+}
+
+/* Tablets */
+@media (max-width: 768px) and (min-width: 481px) {
+  .mission-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 700px;
+    justify-content: center;
   }
   .team-grid {
-    gap: 30px;
-  }
-  .team-member img {
-    height: 230px;
-  }
-
-  /* PHILOSOPHY */
-  .about-philosophy {
-    padding: 80px 20px;
-  }
-  .about-philosophy h2 {
-    font-size: 2.2rem;
-  }
-  .about-philosophy p {
-    font-size: 1rem;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 25px;
     max-width: 700px;
   }
 }
 
-/* TABLETS (≤ 768px) */
-@media (max-width: 768px) {
-  /* HEADER */
-  .header .container {
-    padding: 0 15px;
+/* Phones */
+@media (max-width: 480px) {
+  .mission-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    justify-content: center;
   }
-  .logo {
-    font-size: 24px;
-  }
-  .nav ul {
-    gap: 15px;
-  }
+}
 
-  /* ABOUT */
-  .about-hero {
-    height: 60vh;
-    background-position: center top;
+/* ===================================
+   FIXED RANGE (865px–1045px)
+=================================== */
+@media (min-width: 865px) and (max-width: 1045px) {
+  .mission-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
-  .about-hero h1 {
-    font-size: 2.2rem;
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 950px;
   }
-  .about-hero p {
-    font-size: 1.05rem;
+  .mission-card, .team-member {
+    padding: 25px;
   }
+  .about-mission h2,
+  .about-team h2 {
+    font-size: 2.3rem;
+  }
+}
 
-  .story-grid {
-    flex-direction: column;
-    text-align: center;
-  }
-  .story-image img {
-    max-width: 90%;
-    min-width: 280px;
-  }
+/* ===================================
+   MIDDLE SCREENS (≤ 1024px)
+=================================== */
+@media (max-width: 1024px) {
+  .about-hero { height: 65vh; background-position: center; }
+  .about-hero h1 { font-size: 2.8rem; }
+  .about-hero p { font-size: 1.15rem; }
+
+  .story-grid { gap: 30px; }
+  .story-text h2 { font-size: 2rem; }
+  .story-text p { font-size: 1rem; }
+  .story-image img { max-width: 450px; min-width: 300px; }
+
+  .about-mission h2 { font-size: 2.2rem; }
+  .mission-card { padding: 25px; }
+  .mission-card h3 { font-size: 1.25rem; }
+  .mission-card p { font-size: 0.95rem; }
+
+  .about-team { padding: 80px 20px; }
+  .about-team h2 { font-size: 2.2rem; }
+  .team-intro { font-size: 1rem; }
+  .team-grid { gap: 30px; }
+  .team-member img { height: 230px; }
+
+  .about-philosophy { padding: 80px 20px; }
+  .about-philosophy h2 { font-size: 2.2rem; }
+  .about-philosophy p { font-size: 1rem; max-width: 700px; }
 }
 
 /* PHONES (≤ 480px) */
 @media (max-width: 480px) {
-  /* HEADER */
   .header .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px 5px;
   }
-  .logo {
-    font-size: 22px;
-    margin-bottom: 8px;
-    text-align: center;
-  }
+  .logo { font-size: 22px; margin-bottom: 8px; text-align: center; }
   .nav ul {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   }
+  .about-hero { height: 50vh; padding: 0 15px; }
+  .about-hero h1 { font-size: 1.7rem; }
+  .about-hero p { font-size: 0.95rem; }
 
-  /* ABOUT */
-  .about-hero {
-    height: 50vh;
-    padding: 0 15px;
-  }
-  .about-hero h1 {
-    font-size: 1.7rem;
-  }
-  .about-hero p {
-    font-size: 0.95rem;
-  }
+  .mission-grid { grid-template-columns: 1fr; gap: 20px; }
+  .mission-card { padding: 20px; }
 }
 
 /* ULTRA SMALL PHONES (≤ 350px) */
 @media (max-width: 350px) {
-  /* HEADER */
-  .header .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-  }
-  .logo {
-    font-size: 18px;
-  }
-
-  /* ABOUT */
-  .about-hero {
-    height: 45vh;
-  }
-  .about-hero h1 {
-    font-size: 1.5rem;
-  }
-  .about-hero p {
-    font-size: 0.85rem;
-  }
+  .header .container { flex-direction: column; align-items: center; padding: 5px; }
+  .logo { font-size: 18px; }
+  .about-hero { height: 45vh; }
+  .about-hero h1 { font-size: 1.5rem; }
+  .about-hero p { font-size: 0.85rem; }
 }

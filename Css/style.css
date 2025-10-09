@@ -693,8 +693,11 @@ font-family: "Poppins";
   background: rgba(0,0,0,0.45);
   z-index: 2500;
   display: none;
+  transition: opacity 0.3s ease;
 }
-.menu-overlay.active { display: block; }
+.menu-overlay.active {
+  display: block;
+ }
 
 body.menu-active .side-arrows,
 body.menu-active .centered-controls,

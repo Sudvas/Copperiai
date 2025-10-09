@@ -1,32 +1,37 @@
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const menuClose = document.getElementById('menuClose');
-
 const sideArrows = document.querySelector('.side-arrows');
 
+// 🔹 Open menu
 hamburger.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  const isActive = menu.classList.contains('active');
-  menu.setAttribute('aria-hidden', !isActive);
-  if (isActive) {
-    sideArrows.style.display = 'none';
-  } else {
-    sideArrows.style.display = '';
-  }
+  menu.classList.add('active');
+  menu.setAttribute('aria-hidden', 'false');
+  sideArrows.style.display = 'none';
+
+  // Hide the hamburger while menu is open
+  hamburger.style.display = 'none';
 });
 
+// 🔹 Close menu
 menuClose.addEventListener('click', () => {
   menu.classList.remove('active');
   menu.setAttribute('aria-hidden', 'true');
-
   sideArrows.style.display = '';
+
+  // Show hamburger again
+  hamburger.style.display = 'flex';
 });
 
-
-
-const leftArrow = document.getElementById('arrowLeft');
-const rightArrow = document.getElementById('arrowRight');
-const hero = document.querySelector('.hero');
+// Optional: close if clicking outside the menu (overlay behavior)
+window.addEventListener('click', (e) => {
+  if (menu.classList.contains('active') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+    menu.classList.remove('active');
+    menu.setAttribute('aria-hidden', 'true');
+    sideArrows.style.display = '';
+    hamburger.style.display = 'flex';
+  }
+});
 
 let bannerIndex = 0;
 const banners = [

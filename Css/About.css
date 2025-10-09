@@ -7,11 +7,12 @@ body {
   background: #fdfdfd;
 }
 
-/* HEADER (same as contact page) */
+/* HEADER */
 .header {
   background: #252525;
   padding: 15px 0;
 }
+
 .header .container {
   max-width: 1200px;
   margin: auto;
@@ -20,22 +21,34 @@ body {
   justify-content: space-between;
   padding: 0 20px;
 }
-.logo {
+
+.logo a {
   font-size: 28px;
   font-weight: bold;
   color: #f26522;
+  text-decoration: none;
 }
+
+.logo a:hover {
+  color: #ff7d42;
+}
+
 .nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
+
 .nav a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
 }
-.nav a:hover { color: #f26522; }
+
+.nav a:hover {
+  color: #f26522;
+}
+
 
 /* HERO SECTION */
 .about-hero {

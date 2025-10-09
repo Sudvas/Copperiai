@@ -14,7 +14,7 @@ body {
 
 .hero {
   position: relative;
-  background: url('../images/girl.png') center/cover no-repeat;
+  background: url('../images/rotation/girl.png') center/cover no-repeat;
   color: #fff;
   min-height: 60vh;
   width: 100%;

@@ -161,23 +161,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-const langDropdown = document.getElementById('langDropdown');
+// language flag dropdown
+const dropdown = document.getElementById('customLangDropdown');
+const selected = dropdown.querySelector('.selected-option');
+const optionsContainer = dropdown.querySelector('.dropdown-options');
+const options = dropdown.querySelectorAll('.option');
 
-const flags = {
-  "English": "images/flag-uk.png",
-  "Deutsch": "images/flag-germany.png",
-  "Français": "images/flag-france.png"
-};
+// Toggle options visibility
+selected.addEventListener('click', () => {
+  optionsContainer.classList.toggle('hidden');
+});
 
-function updateFlag() {
-  const selectedLang = langDropdown.value;
-  const flagUrl = flags[selectedLang] || flags["English"];
+// Handle option click
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    const lang = option.getAttribute('data-lang');
+    const flag = option.getAttribute('data-flag');
 
-  langDropdown.style.backgroundImage = `url('${flagUrl}'), url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`;
-}
+    // Update selected
+    selected.innerHTML = `<img src="${flag}" class="flag-icon" alt="${lang}"> <span>${lang}</span>`;
 
-langDropdown.addEventListener('change', updateFlag);
-window.addEventListener('DOMContentLoaded', updateFlag);
+    // Hide dropdown
+    optionsContainer.classList.add('hidden');
+  });
+});
+
+// Close dropdown if clicked outside
+document.addEventListener('click', (e) => {
+  if (!dropdown.contains(e.target)) {
+    optionsContainer.classList.add('hidden');
+  }
+});
 
 //Category dropdown page yeah yeah
 document.getElementById("categoryDropdown").addEventListener("change", function() {

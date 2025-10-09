@@ -747,6 +747,62 @@ body.menu-active .right-controls {
     url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
 }
 
+.custom-lang-dropdown {
+  position: relative;
+  width: 160px;
+  user-select: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  left: 10px;
+  margin-left: 5px;
+}
+
+.selected-option {
+  padding: 8px 12px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 14px;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 50;
+}
+
+.dropdown-options .option {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease;
+}
+
+.dropdown-options .option:hover {
+  background: #f2f2f2;
+}
+
+.hidden {
+  display: none;
+}
+
   /* Loader */
 .lds-roller,
 .lds-roller div,

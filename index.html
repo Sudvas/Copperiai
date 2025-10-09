@@ -52,12 +52,26 @@
 
 
       <!-- Right controls -->
-      <div class="right-controls">
-   <select class="lang-dropdown" id="langDropdown">
-    <option value="English">English</option>
-    <option value="Deutsch">Deutsch</option>
-    <option value="Français">Français</option>
-  </select>
+<div class="custom-lang-dropdown" id="customLangDropdown">
+  <div class="selected-option">
+    <img src="images/flag-uk.png" alt="Flag" class="flag-icon" />
+    <span>English</span>
+  </div>
+  <div class="dropdown-options hidden">
+    <div class="option" data-lang="English" data-flag="images/flag-uk.png">
+      <img src="images/flag-uk.png" alt="UK" class="flag-icon" />
+      English
+    </div>
+    <div class="option" data-lang="Deutsch" data-flag="images/flag-germany.png">
+      <img src="images/flag-germany.png" alt="Germany" class="flag-icon" />
+      Deutsch
+    </div>
+    <div class="option" data-lang="Français" data-flag="images/flag-france.png">
+      <img src="images/flag-france.png" alt="France" class="flag-icon" />
+      Français
+    </div>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </select>

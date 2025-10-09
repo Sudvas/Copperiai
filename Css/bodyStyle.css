@@ -284,7 +284,7 @@ h1 {
 @media (max-width: 788px) and (min-width: 480px) {
 
   .hamburger {
-    top: 25px;
+    top: -45px;
     left: 20px;
     width: 32px;
     height: 24px;

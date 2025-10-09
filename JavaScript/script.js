@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
 const langDropdown = document.getElementById('langDropdown');
 
 const flags = {

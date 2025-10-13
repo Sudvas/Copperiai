@@ -188,6 +188,20 @@ document.getElementById("categoryDropdown").addEventListener("change", function(
   }
 })
 
+// keeps the name after switching pages (also makes you be able to go back to main page by selecting all cats)
+window.addEventListener("DOMContentLoaded", function() {
+  const dropdown = document.getElementById("categoryDropdown");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  for (let i = 0; i < dropdown.options.length; i++) {
+    const optionValue = dropdown.options[i].value.split("/").pop();
+    if (optionValue === currentPage) {
+      dropdown.selectedIndex = i;
+      break;
+    }
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".see-more").forEach(btn => {
     btn.addEventListener("click", e => {

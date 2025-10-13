@@ -177,6 +177,7 @@ text-align: center;
   gap: 0px;
   width: 100%;
   max-width: 770px;
+  z-index: 30;
 }
 
 .search-group {
@@ -313,7 +314,7 @@ text-transform: uppercase;
 color: #f1f1f1;
 font-weight: 700;
 font-family: "Poppins";
-text-align: center;;
+text-align: center;
 }
 .banner-text h1 span { display: block; }
 .banner-text h1 span:last-child {
@@ -847,7 +848,7 @@ body.menu-active .right-controls {
 
   .hamburger {
     top: 25px;
-    left: 20px;
+    left: 75px;
     width: 32px;
     height: 24px;
   }
@@ -936,8 +937,8 @@ body.menu-active .right-controls {
   }
 
   .search-btn {
-    width: 46px;
-    height: 44px;
+    width: 66px;
+    height: 38px;
     background-size: 16px 16px;
     border-radius: 0 6px 6px 0;
     margin-left: 0;
@@ -968,6 +969,7 @@ body.menu-active .right-controls {
     width: 50px;
     height: 50px;
     font-size: 20px;
+    top: -50px;
   }
 
   .side-arrows .arrow.left { left: 3%}

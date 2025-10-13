@@ -188,7 +188,6 @@ h1 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   padding: 16px;
   border-radius: 10px;
-  z-index: 1;
 }
 
 .cart-dropdown.hidden {
@@ -290,35 +289,3 @@ h1 {
   outline: none;
 }
 
-@media (max-width: 788px) and (min-width: 488px) {
-  .carousel-track{
-    gap: 16px;
-  }
-
-.card {
-  flex: 0 0 calc(48% - 10px);
-  min-height: 450px;
-}
-}
-
-@media (max-width: 480px) {
-  .carousel-track {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card {
-    flex: 0 0 calc(50% - 10px);
-    min-height: 400px;
-    padding: 15px;
-  }
-
-  .card img {
-    max-height: 250px;
-  }
-
-  .actions a {
-    font-size: 14px;
-  }
-}

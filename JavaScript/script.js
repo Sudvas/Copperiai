@@ -187,3 +187,19 @@ document.getElementById("categoryDropdown").addEventListener("change", function(
     window.location.href = selectedPage;
   }
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".see-more").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      btn.closest(".card").classList.add("flipped");
+    });
+  });
+
+  document.querySelectorAll(".see-less").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      btn.closest(".card").classList.remove("flipped");
+    });
+  });
+});

@@ -16,38 +16,32 @@ h1 {
 }
 
 .carousel-container {
-  overflow: hidden;
   width: 100%;
   max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
   gap: 24px;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 .card {
-  flex: 0 0 calc(32% - 16px); /* 3 cards per view */
-  scroll-snap-align: center;
-  background: white;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 500px;
-  justify-content: space-between; 
+  flex: 0 0 calc(33% - 16px);
+  width: 300px;
+  height: 550px;
+  perspective: 1000px;
 }
 
 .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
   transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 .card.flipped .card-inner {
@@ -55,27 +49,43 @@ h1 {
 }
 
 .card-front, .card-back {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   backface-visibility: hidden;
-  top: 0;
-  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box;
-  background: white;
   justify-content: space-between;
-  height: 100%;
+}
+
+/* Front side */
+.card-front {
+  z-index: 2;
 }
 
 .card-back {
   transform: rotateY(180deg);
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 30px;
+}
+
+/* Button styling */
+.card-back button.see-less {
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-back button.see-less:hover {
+  background: orange;
 }
 
 .card-back h3 {
@@ -88,16 +98,15 @@ h1 {
 }
 
 .image-container {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px 0;
 }
 
 .image-container img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 250px;
   object-fit: contain;
 }
 

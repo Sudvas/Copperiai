@@ -140,7 +140,7 @@ text-align: center;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 40px;
+  padding: 15px px;
 }
 
 /* LOGO (Eflyer) */
@@ -654,6 +654,16 @@ font-family: "Poppins";
   color: #f26522;
 }
 
+.menu-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
 .menu-close {
   position: absolute;
   top: 15px;

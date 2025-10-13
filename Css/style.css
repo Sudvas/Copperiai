@@ -14,7 +14,7 @@ body {
 
 .hero {
   position: relative;
-  background: url('../images/girl.png') center/cover no-repeat;
+  background: url('../images/rotation/girl.png') center/cover no-repeat;
   color: #fff;
   min-height: 60vh;
   width: 100%;
@@ -56,7 +56,7 @@ body {
   top: 50%;
   left: 180px;
   transform: translateY(-50%);
-  z-index: 10002;
+  z-index: 35;
   cursor: pointer;
   width: 35px;
   height: 25px;
@@ -135,11 +135,12 @@ text-align: center;
 /* === SEARCH & HEADER === */
 .header-controls {
   position: relative;
+  z-index: 25;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 40px;
+  padding: 15px px;
 }
 
 /* LOGO (Eflyer) */
@@ -155,6 +156,7 @@ text-align: center;
 
 .right-controls {
   position: absolute;
+  z-index: 25;
   right: 40px;
   top: 50%;
   transform: translateY(-50%);
@@ -173,6 +175,7 @@ text-align: center;
 /* SEARCH AREA WRAPPER */
 .search-area {
   display: flex;
+  z-index: 30;
   align-items: center;
   gap: 0px;
   width: 100%;
@@ -662,6 +665,16 @@ font-family: "Poppins";
   color: #fff;
   cursor: pointer;
 }
+.menu-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
 
 .menu.active ~ .side-arrows {
   display: none;
@@ -691,8 +704,11 @@ font-family: "Poppins";
   background: rgba(0,0,0,0.45);
   z-index: 2500;
   display: none;
+  transition: opacity 0.3s ease;
 }
-.menu-overlay.active { display: block; }
+.menu-overlay.active {
+  display: block;
+ }
 
 body.menu-active .side-arrows,
 body.menu-active .centered-controls,
@@ -743,6 +759,62 @@ body.menu-active .right-controls {
   background-image:
     url("../images/flag-uk.png"),
     url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+.custom-lang-dropdown {
+  position: relative;
+  width: 160px;
+  user-select: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  left: 10px;
+  margin-left: 5px;
+}
+
+.selected-option {
+  padding: 8px 12px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 14px;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 50;
+}
+
+.dropdown-options .option {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease;
+}
+
+.dropdown-options .option:hover {
+  background: #f2f2f2;
+}
+
+.hidden {
+  display: none;
 }
 
   /* Loader */
@@ -880,12 +952,16 @@ body.menu-active .right-controls {
   }
 
   .top-nav {
+    flex-wrap: wrap;
     gap: 15px;
-    padding: 10px 0;
+    padding: 10px;
+    justify-content: space-around;
   }
 
-  .topv-nav a {
+  .top-nav a {
     font-size: 13px;
+    padding: 5px 10px;
+    white-space: nowrap;
   }
 
   .header-controls {

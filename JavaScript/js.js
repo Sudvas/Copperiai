@@ -1,37 +1,42 @@
+// HAMBURGER MENU
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const menuClose = document.getElementById('menuClose');
 const sideArrows = document.querySelector('.side-arrows');
 
-// 🔹 Open menu
 hamburger.addEventListener('click', () => {
-  menu.classList.add('active');
-  menu.setAttribute('aria-hidden', 'false');
-  sideArrows.style.display = 'none';
+  const isActive = menu.classList.toggle('active');
+  menu.setAttribute('aria-hidden', !isActive);
 
-  // Hide the hamburger while menu is open
-  hamburger.style.display = 'none';
+  // Hide other parts while open menu
+  sideArrows.style.display = isActive ? 'none' : '';
+  hamburger.style.display = isActive ? 'none' : 'flex';
 });
 
-// 🔹 Close menu
 menuClose.addEventListener('click', () => {
   menu.classList.remove('active');
   menu.setAttribute('aria-hidden', 'true');
   sideArrows.style.display = '';
-
-  // Show hamburger again
   hamburger.style.display = 'flex';
 });
 
-// Optional: close if clicking outside the menu (overlay behavior)
+// Close menu if clicking outside it
 window.addEventListener('click', (e) => {
-  if (menu.classList.contains('active') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+  if (
+    menu.classList.contains('active') &&
+    !menu.contains(e.target) &&
+    !hamburger.contains(e.target)
+  ) {
     menu.classList.remove('active');
     menu.setAttribute('aria-hidden', 'true');
     sideArrows.style.display = '';
     hamburger.style.display = 'flex';
   }
 });
+
+const leftArrow = document.getElementById('arrowLeft');
+const rightArrow = document.getElementById('arrowRight');
+const hero = document.querySelector('.hero');
 
 let bannerIndex = 0;
 const banners = [

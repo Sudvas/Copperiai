@@ -916,6 +916,7 @@ body.menu-active .right-controls {
   }
 }
 
+/*media quaries bruh */
 @media (max-width: 788px) and (min-width: 480px) {
 
   .hamburger {
@@ -1056,4 +1057,138 @@ body.menu-active .right-controls {
     font-size: 26px;
     line-height: 60px;
   }
+}
+
+/* =========================================
+   MOBILE (480px AND BELOW)
+   ========================================= */
+@media (max-width: 480px) {
+
+  /* General layout */
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  /* Header / Navbar */
+  .header_section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-toggler {
+    display: block;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+  }
+
+  .custom_menu-container {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .custom_menu-container.active {
+    display: flex;
+  }
+
+  .custom_menu-container a {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  /* Hero Section */
+  .hero_area {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero_area .detail-box {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero_area .detail-box h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero_area .detail-box p {
+    font-size: 0.9rem;
+  }
+
+  .hero_area .img-box img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Category Section */
+  .category_section .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category_section .box {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Product Section */
+  .product_section .box {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .product_section .img-box img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Arrival / Offers */
+  .arrival_section .box {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Login Modal */
+  .login_section .modal-content {
+    width: 90%;
+    margin: auto;
+  }
+
+  /* Footer */
+  .info_section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info_section .info_contact,
+  .info_section .info_form {
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .info_section form input {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .info_section form button {
+    width: 85%;
+  }
+
+  .footer_section {
+    padding: 1rem 0;
+    font-size: 0.8rem;
+  }
+
 }

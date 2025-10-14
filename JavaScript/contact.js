@@ -16,20 +16,6 @@ function logoutUser(sessionId) {
 }
 
 function randomToken() { return Math.random().toString(36).substring(2,12); }
-const roles = ["guest","editor","admin"];
-
-function assignRole(u) { 
-    return roles[Math.floor(Math.random() * roles.length)];
-}
-
-let twoFactorEnabled = false;
-function sendCode(u) { console.log(`2FA code sent to ${u}`); }
-
-let rememberMe = Math.random() > 0.5;
-
-function validatePwd(p) { 
-    return p.length > 5 && !p.includes(" "); 
-}
 
 function loginAudit(u) { 
     console.log(`Login attempt: ${u} at ${new Date().toISOString()}`);

@@ -180,6 +180,7 @@ text-align: center;
   gap: 0px;
   width: 100%;
   max-width: 770px;
+  z-index: 30;
 }
 
 .search-group {
@@ -915,7 +916,41 @@ body.menu-active .right-controls {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 788px) and (min-width: 480px) {
+
+  .hamburger {
+    top: 25px;
+    left: 75px;
+    width: 32px;
+    height: 24px;
+  }
+
+  .hero {
+    min-height: 55vh;
+    background-position: center top;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .banner-text h1 {
+    font-size: 45px;
+    line-height: 48px;
+  }
+
+  .banner-text {
+    margin-top: 40px;
+  }
+
+  .buy-now {
+    width: 180px;
+    height: 60px;
+    font-size: 14px;
+  }
+
   .top-nav {
     flex-wrap: wrap;
     gap: 15px;
@@ -929,7 +964,96 @@ body.menu-active .right-controls {
     white-space: nowrap;
   }
 
-  .banner-text h1 {
-    font-size: 60px;
+  .header-controls {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .centered-controls {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .search-area {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    max-width: 380px;
+    width: 100%;
+    gap: 0;
+  }
+
+  .category-dropdown {
+    width: 100%;
+    max-width: 360px;
+    height: 45px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .search-group {
+    flex: 1;
+    display: flex;
+  }
+
+  .search-input {
+    font-size: 14px;
+    flex: 1;
+    padding: 10px 14px;
+  }
+
+  .search-btn {
+    width: 66px;
+    height: 38px;
+    background-size: 16px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-left: 0;
+  }
+
+  .right-controls {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .lang-dropdown {
+    font-size: 14px;
+    padding: 6px 30px;
+  }
+
+  .icon-link {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .side-arrows .arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    top: -50px;
+  }
+
+  .side-arrows .arrow.left { left: 3%}
+  .side-arrows .arrow.right {right: 3%}
+  
+  .bottom-subtitle,
+  .bottom-subtitle1 {
+    font-size: 26px;
+    line-height: 60px;
   }
 }

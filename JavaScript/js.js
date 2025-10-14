@@ -1,29 +1,38 @@
+// HAMBURGER MENU
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const menuClose = document.getElementById('menuClose');
 const sideArrows = document.querySelector('.side-arrows');
 
-// Open menu
 hamburger.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  const isActive = menu.classList.contains('active');
+  const isActive = menu.classList.toggle('active');
   menu.setAttribute('aria-hidden', !isActive);
-  if (isActive) {
-    sideArrows.style.display = 'none';
-  } else {
-    sideArrows.style.display = '';
-  }
+
+  // Hide other parts while open menu
+  sideArrows.style.display = isActive ? 'none' : '';
+  hamburger.style.display = isActive ? 'none' : 'flex';
 });
 
-// Close menuy
 menuClose.addEventListener('click', () => {
   menu.classList.remove('active');
   menu.setAttribute('aria-hidden', 'true');
-
   sideArrows.style.display = '';
+  hamburger.style.display = 'flex';
 });
 
-
+// Close menu if clicking outside it
+window.addEventListener('click', (e) => {
+  if (
+    menu.classList.contains('active') &&
+    !menu.contains(e.target) &&
+    !hamburger.contains(e.target)
+  ) {
+    menu.classList.remove('active');
+    menu.setAttribute('aria-hidden', 'true');
+    sideArrows.style.display = '';
+    hamburger.style.display = 'flex';
+  }
+});
 
 const leftArrow = document.getElementById('arrowLeft');
 const rightArrow = document.getElementById('arrowRight');

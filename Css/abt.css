@@ -131,34 +131,38 @@ h1 {
   margin: 0 auto;
   padding: 0 20px;
 }
-.footer-brand {
-  text-align: center;
-  color: white;
-  font-size: 48px;
-  font-weight: 900;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fdfdfd;
+  display: flex;
+  flex-direction: column;
 }
 
-/* NEWSLETTER */
-.newsletter {
-  width: 70%;
-  margin: 0 auto 20px;
+/* HEADER */
+.header {
+  background: #252525;
+  padding: 15px 0;
+}
+
+.header .container {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 5px;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  padding: 0 20px;
 }
-.newsletter-input {
-  flex: 1;
-  font-size: 18px;
-  color: #fff;
-  background: transparent;
-  border: none;
-  outline: none;
-  height: 40px;
+
+.logo a {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f26522;
+  text-decoration: none;
 }
-.newsletter-input::placeholder {
-  color: #fff;
+
+.logo a:hover {
+  color: #ff7d42;
+}
